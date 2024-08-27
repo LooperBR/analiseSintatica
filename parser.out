@@ -1,0 +1,3349 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    Break
+    Function
+    IGNORE
+
+Grammar
+
+Rule 0     S' -> geral
+Rule 1     geral -> Inicio statements Fim
+Rule 2     statements -> statements statement
+Rule 3     statements -> statement
+Rule 4     statement -> While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+Rule 5     tipoVar -> TipoVarInt
+Rule 6     tipoVar -> TipoVarReal
+Rule 7     tipoVar -> TipoVarString
+Rule 8     tipoVar -> TipoVarBool
+Rule 9     statement -> Var OpAtrib expr
+Rule 10    statement -> Var OpAtrib Texto
+Rule 11    statement -> Var OpAtrib Var
+Rule 12    statement -> Var OpAtrib Inteiro
+Rule 13    statement -> Var OpAtrib Real
+Rule 14    statement -> Var OpAtrib funcao
+Rule 15    statement -> Var OpAtrib entrada
+Rule 16    statement -> tipoVar Var OpAtrib expr
+Rule 17    statement -> TipoVarString Var OpAtrib Texto
+Rule 18    statement -> tipoVar Var OpAtrib Var
+Rule 19    statement -> TipoVarInt Var OpAtrib Inteiro
+Rule 20    statement -> TipoVarReal Var OpAtrib Inteiro
+Rule 21    statement -> TipoVarReal Var OpAtrib Real
+Rule 22    statement -> tipoVar Var OpAtrib funcao
+Rule 23    statement -> TipoVarString Var OpAtrib entrada
+Rule 24    statement -> TipoVarInt Var OpAtrib entrada
+Rule 25    statement -> TipoVarReal Var OpAtrib entrada
+Rule 26    statement -> TipoVarBool Var OpAtrib entrada
+Rule 27    statement -> TipoVarBool Var OpAtrib true_false
+Rule 28    statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+Rule 29    statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose
+Rule 30    statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses
+Rule 31    statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses
+Rule 32    statement -> funcao
+Rule 33    statement -> funcao AbreParenteses statements FechaParenteses
+Rule 34    cond_param -> Var OpRelaMenor Inteiro
+Rule 35    cond_param -> Var OpRelaMenor Real
+Rule 36    cond_param -> Var OpRelaMenor Var
+Rule 37    cond_param -> Var OpRelaMaior Inteiro
+Rule 38    cond_param -> Var OpRelaMaior Real
+Rule 39    cond_param -> Var OpRelaMaior Var
+Rule 40    cond_param -> Var OpRelaMenorIgual Inteiro
+Rule 41    cond_param -> Var OpRelaMenorIgual Real
+Rule 42    cond_param -> Var OpRelaMenorIgual Var
+Rule 43    cond_param -> Var OpRelaMaiorIgual Inteiro
+Rule 44    cond_param -> Var OpRelaMaiorIgual Real
+Rule 45    cond_param -> Var OpRelaMaiorIgual Var
+Rule 46    cond_param -> Var OpRelaIgual Inteiro
+Rule 47    cond_param -> Var OpRelaIgual Real
+Rule 48    cond_param -> Var OpRelaIgual Var
+Rule 49    cond_param -> Var OpRelaDiferente Inteiro
+Rule 50    cond_param -> Var OpRelaDiferente Real
+Rule 51    cond_param -> Var OpRelaDiferente Var
+Rule 52    cond_param -> Var OpLogAnd Inteiro
+Rule 53    cond_param -> Var OpLogAnd Real
+Rule 54    cond_param -> Var OpLogAnd Var
+Rule 55    cond_param -> Var OpLogOr Inteiro
+Rule 56    cond_param -> Var OpLogOr Real
+Rule 57    cond_param -> Var OpLogOr Var
+Rule 58    statement -> Print AbreParenteses expr FechaParenteses
+Rule 59    true_false -> BoolTrue
+Rule 60    true_false -> BoolFalse
+Rule 61    cond_param -> cond_param OpLogAnd cond_param
+Rule 62    cond_param -> cond_param OpLogOr cond_param
+Rule 63    expr -> Inteiro
+Rule 64    expr -> Real
+Rule 65    expr -> Var
+Rule 66    expr -> expr OpMatSoma expr
+Rule 67    expr -> expr OpMatSub expr
+Rule 68    expr -> expr OpMatMult expr
+Rule 69    expr -> expr OpMatDiv expr
+Rule 70    expr -> AbreParenteses expr FechaParenteses
+Rule 71    expr -> Texto
+Rule 72    param_vazio -> <empty>
+Rule 73    param -> Inteiro
+Rule 74    param -> Real
+Rule 75    param -> Texto
+Rule 76    param -> Var
+Rule 77    param -> param Virgula param
+Rule 78    entrada -> Input AbreParenteses Texto FechaParenteses
+Rule 79    entrada -> Input AbreParenteses FechaParenteses
+Rule 80    funcao -> AbreParenteses param_vazio FechaParenteses
+Rule 81    funcao -> AbreParenteses param FechaParenteses
+Rule 82    senaose -> Elseif AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+Rule 83    senaose -> senaose senaose
+Rule 84    senaose -> senaose
+
+Terminals, with rules where they appear
+
+AbreParenteses       : 4 4 28 28 29 29 30 30 30 31 31 31 33 58 70 78 79 80 81 82 82
+BoolFalse            : 60
+BoolTrue             : 59
+Break                : 
+Else                 : 30 31
+Elseif               : 82
+FechaParenteses      : 4 4 28 28 29 29 30 30 30 31 31 31 33 58 70 78 79 80 81 82 82
+Fim                  : 1
+Function             : 
+IGNORE               : 
+If                   : 28 29 30 31
+Inicio               : 1
+Input                : 78 79
+Inteiro              : 12 19 20 34 37 40 43 46 49 52 55 63 73
+OpAtrib              : 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+OpLogAnd             : 52 53 54 61
+OpLogOr              : 55 56 57 62
+OpMatDiv             : 69
+OpMatMult            : 68
+OpMatSoma            : 66
+OpMatSub             : 67
+OpRelaDiferente      : 49 50 51
+OpRelaIgual          : 46 47 48
+OpRelaMaior          : 37 38 39
+OpRelaMaiorIgual     : 43 44 45
+OpRelaMenor          : 34 35 36
+OpRelaMenorIgual     : 40 41 42
+Print                : 58
+Real                 : 13 21 35 38 41 44 47 50 53 56 64 74
+Texto                : 10 17 71 75 78
+TipoVarBool          : 8 26 27
+TipoVarInt           : 5 19 24
+TipoVarReal          : 6 20 21 25
+TipoVarString        : 7 17 23
+Var                  : 9 10 11 11 12 13 14 15 16 17 18 18 19 20 21 22 23 24 25 26 27 34 35 36 36 37 38 39 39 40 41 42 42 43 44 45 45 46 47 48 48 49 50 51 51 52 53 54 54 55 56 57 57 65 76
+Virgula              : 77
+While                : 4
+error                : 
+
+Nonterminals, with rules where they appear
+
+cond_param           : 4 28 29 30 31 61 61 62 62 82
+entrada              : 15 23 24 25 26
+expr                 : 9 16 58 66 66 67 67 68 68 69 69 70
+funcao               : 14 22 32 33
+geral                : 0
+param                : 77 77 81
+param_vazio          : 80
+senaose              : 29 30 83 83 84
+statement            : 2 3
+statements           : 1 2 4 28 29 30 30 31 31 33 82
+tipoVar              : 16 18 22
+true_false           : 27
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . geral
+    (1) geral -> . Inicio statements Fim
+
+    Inicio          shift and go to state 2
+
+    geral                          shift and go to state 1
+
+state 1
+
+    (0) S' -> geral .
+
+
+
+state 2
+
+    (1) geral -> Inicio . statements Fim
+    (2) statements -> . statements statement
+    (3) statements -> . statement
+    (4) statement -> . While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (9) statement -> . Var OpAtrib expr
+    (10) statement -> . Var OpAtrib Texto
+    (11) statement -> . Var OpAtrib Var
+    (12) statement -> . Var OpAtrib Inteiro
+    (13) statement -> . Var OpAtrib Real
+    (14) statement -> . Var OpAtrib funcao
+    (15) statement -> . Var OpAtrib entrada
+    (16) statement -> . tipoVar Var OpAtrib expr
+    (17) statement -> . TipoVarString Var OpAtrib Texto
+    (18) statement -> . tipoVar Var OpAtrib Var
+    (19) statement -> . TipoVarInt Var OpAtrib Inteiro
+    (20) statement -> . TipoVarReal Var OpAtrib Inteiro
+    (21) statement -> . TipoVarReal Var OpAtrib Real
+    (22) statement -> . tipoVar Var OpAtrib funcao
+    (23) statement -> . TipoVarString Var OpAtrib entrada
+    (24) statement -> . TipoVarInt Var OpAtrib entrada
+    (25) statement -> . TipoVarReal Var OpAtrib entrada
+    (26) statement -> . TipoVarBool Var OpAtrib entrada
+    (27) statement -> . TipoVarBool Var OpAtrib true_false
+    (28) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (29) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose
+    (30) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses
+    (31) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses
+    (32) statement -> . funcao
+    (33) statement -> . funcao AbreParenteses statements FechaParenteses
+    (58) statement -> . Print AbreParenteses expr FechaParenteses
+    (5) tipoVar -> . TipoVarInt
+    (6) tipoVar -> . TipoVarReal
+    (7) tipoVar -> . TipoVarString
+    (8) tipoVar -> . TipoVarBool
+    (80) funcao -> . AbreParenteses param_vazio FechaParenteses
+    (81) funcao -> . AbreParenteses param FechaParenteses
+
+    While           shift and go to state 5
+    Var             shift and go to state 7
+    TipoVarString   shift and go to state 10
+    TipoVarInt      shift and go to state 11
+    TipoVarReal     shift and go to state 12
+    TipoVarBool     shift and go to state 13
+    If              shift and go to state 14
+    Print           shift and go to state 15
+    AbreParenteses  shift and go to state 6
+
+    statements                     shift and go to state 3
+    statement                      shift and go to state 4
+    funcao                         shift and go to state 8
+    tipoVar                        shift and go to state 9
+
+state 3
+
+    (1) geral -> Inicio statements . Fim
+    (2) statements -> statements . statement
+    (4) statement -> . While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (9) statement -> . Var OpAtrib expr
+    (10) statement -> . Var OpAtrib Texto
+    (11) statement -> . Var OpAtrib Var
+    (12) statement -> . Var OpAtrib Inteiro
+    (13) statement -> . Var OpAtrib Real
+    (14) statement -> . Var OpAtrib funcao
+    (15) statement -> . Var OpAtrib entrada
+    (16) statement -> . tipoVar Var OpAtrib expr
+    (17) statement -> . TipoVarString Var OpAtrib Texto
+    (18) statement -> . tipoVar Var OpAtrib Var
+    (19) statement -> . TipoVarInt Var OpAtrib Inteiro
+    (20) statement -> . TipoVarReal Var OpAtrib Inteiro
+    (21) statement -> . TipoVarReal Var OpAtrib Real
+    (22) statement -> . tipoVar Var OpAtrib funcao
+    (23) statement -> . TipoVarString Var OpAtrib entrada
+    (24) statement -> . TipoVarInt Var OpAtrib entrada
+    (25) statement -> . TipoVarReal Var OpAtrib entrada
+    (26) statement -> . TipoVarBool Var OpAtrib entrada
+    (27) statement -> . TipoVarBool Var OpAtrib true_false
+    (28) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (29) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose
+    (30) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses
+    (31) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses
+    (32) statement -> . funcao
+    (33) statement -> . funcao AbreParenteses statements FechaParenteses
+    (58) statement -> . Print AbreParenteses expr FechaParenteses
+    (5) tipoVar -> . TipoVarInt
+    (6) tipoVar -> . TipoVarReal
+    (7) tipoVar -> . TipoVarString
+    (8) tipoVar -> . TipoVarBool
+    (80) funcao -> . AbreParenteses param_vazio FechaParenteses
+    (81) funcao -> . AbreParenteses param FechaParenteses
+
+    Fim             shift and go to state 16
+    While           shift and go to state 5
+    Var             shift and go to state 7
+    TipoVarString   shift and go to state 10
+    TipoVarInt      shift and go to state 11
+    TipoVarReal     shift and go to state 12
+    TipoVarBool     shift and go to state 13
+    If              shift and go to state 14
+    Print           shift and go to state 15
+    AbreParenteses  shift and go to state 6
+
+    statement                      shift and go to state 17
+    funcao                         shift and go to state 8
+    tipoVar                        shift and go to state 9
+
+state 4
+
+    (3) statements -> statement .
+
+    Fim             reduce using rule 3 (statements -> statement .)
+    While           reduce using rule 3 (statements -> statement .)
+    Var             reduce using rule 3 (statements -> statement .)
+    TipoVarString   reduce using rule 3 (statements -> statement .)
+    TipoVarInt      reduce using rule 3 (statements -> statement .)
+    TipoVarReal     reduce using rule 3 (statements -> statement .)
+    TipoVarBool     reduce using rule 3 (statements -> statement .)
+    If              reduce using rule 3 (statements -> statement .)
+    Print           reduce using rule 3 (statements -> statement .)
+    AbreParenteses  reduce using rule 3 (statements -> statement .)
+    FechaParenteses reduce using rule 3 (statements -> statement .)
+
+
+state 5
+
+    (4) statement -> While . AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+
+    AbreParenteses  shift and go to state 18
+
+
+state 6
+
+    (80) funcao -> AbreParenteses . param_vazio FechaParenteses
+    (81) funcao -> AbreParenteses . param FechaParenteses
+    (72) param_vazio -> .
+    (73) param -> . Inteiro
+    (74) param -> . Real
+    (75) param -> . Texto
+    (76) param -> . Var
+    (77) param -> . param Virgula param
+
+    FechaParenteses reduce using rule 72 (param_vazio -> .)
+    Inteiro         shift and go to state 21
+    Real            shift and go to state 22
+    Texto           shift and go to state 23
+    Var             shift and go to state 24
+
+    param_vazio                    shift and go to state 19
+    param                          shift and go to state 20
+
+state 7
+
+    (9) statement -> Var . OpAtrib expr
+    (10) statement -> Var . OpAtrib Texto
+    (11) statement -> Var . OpAtrib Var
+    (12) statement -> Var . OpAtrib Inteiro
+    (13) statement -> Var . OpAtrib Real
+    (14) statement -> Var . OpAtrib funcao
+    (15) statement -> Var . OpAtrib entrada
+
+    OpAtrib         shift and go to state 25
+
+
+state 8
+
+    (32) statement -> funcao .
+    (33) statement -> funcao . AbreParenteses statements FechaParenteses
+
+  ! shift/reduce conflict for AbreParenteses resolved as shift
+    Fim             reduce using rule 32 (statement -> funcao .)
+    While           reduce using rule 32 (statement -> funcao .)
+    Var             reduce using rule 32 (statement -> funcao .)
+    TipoVarString   reduce using rule 32 (statement -> funcao .)
+    TipoVarInt      reduce using rule 32 (statement -> funcao .)
+    TipoVarReal     reduce using rule 32 (statement -> funcao .)
+    TipoVarBool     reduce using rule 32 (statement -> funcao .)
+    If              reduce using rule 32 (statement -> funcao .)
+    Print           reduce using rule 32 (statement -> funcao .)
+    FechaParenteses reduce using rule 32 (statement -> funcao .)
+    AbreParenteses  shift and go to state 26
+
+  ! AbreParenteses  [ reduce using rule 32 (statement -> funcao .) ]
+
+
+state 9
+
+    (16) statement -> tipoVar . Var OpAtrib expr
+    (18) statement -> tipoVar . Var OpAtrib Var
+    (22) statement -> tipoVar . Var OpAtrib funcao
+
+    Var             shift and go to state 27
+
+
+state 10
+
+    (17) statement -> TipoVarString . Var OpAtrib Texto
+    (23) statement -> TipoVarString . Var OpAtrib entrada
+    (7) tipoVar -> TipoVarString .
+
+  ! shift/reduce conflict for Var resolved as shift
+    Var             shift and go to state 28
+
+  ! Var             [ reduce using rule 7 (tipoVar -> TipoVarString .) ]
+
+
+state 11
+
+    (19) statement -> TipoVarInt . Var OpAtrib Inteiro
+    (24) statement -> TipoVarInt . Var OpAtrib entrada
+    (5) tipoVar -> TipoVarInt .
+
+  ! shift/reduce conflict for Var resolved as shift
+    Var             shift and go to state 29
+
+  ! Var             [ reduce using rule 5 (tipoVar -> TipoVarInt .) ]
+
+
+state 12
+
+    (20) statement -> TipoVarReal . Var OpAtrib Inteiro
+    (21) statement -> TipoVarReal . Var OpAtrib Real
+    (25) statement -> TipoVarReal . Var OpAtrib entrada
+    (6) tipoVar -> TipoVarReal .
+
+  ! shift/reduce conflict for Var resolved as shift
+    Var             shift and go to state 30
+
+  ! Var             [ reduce using rule 6 (tipoVar -> TipoVarReal .) ]
+
+
+state 13
+
+    (26) statement -> TipoVarBool . Var OpAtrib entrada
+    (27) statement -> TipoVarBool . Var OpAtrib true_false
+    (8) tipoVar -> TipoVarBool .
+
+  ! shift/reduce conflict for Var resolved as shift
+    Var             shift and go to state 31
+
+  ! Var             [ reduce using rule 8 (tipoVar -> TipoVarBool .) ]
+
+
+state 14
+
+    (28) statement -> If . AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (29) statement -> If . AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose
+    (30) statement -> If . AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses
+    (31) statement -> If . AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses
+
+    AbreParenteses  shift and go to state 32
+
+
+state 15
+
+    (58) statement -> Print . AbreParenteses expr FechaParenteses
+
+    AbreParenteses  shift and go to state 33
+
+
+state 16
+
+    (1) geral -> Inicio statements Fim .
+
+    $end            reduce using rule 1 (geral -> Inicio statements Fim .)
+
+
+state 17
+
+    (2) statements -> statements statement .
+
+    Fim             reduce using rule 2 (statements -> statements statement .)
+    While           reduce using rule 2 (statements -> statements statement .)
+    Var             reduce using rule 2 (statements -> statements statement .)
+    TipoVarString   reduce using rule 2 (statements -> statements statement .)
+    TipoVarInt      reduce using rule 2 (statements -> statements statement .)
+    TipoVarReal     reduce using rule 2 (statements -> statements statement .)
+    TipoVarBool     reduce using rule 2 (statements -> statements statement .)
+    If              reduce using rule 2 (statements -> statements statement .)
+    Print           reduce using rule 2 (statements -> statements statement .)
+    AbreParenteses  reduce using rule 2 (statements -> statements statement .)
+    FechaParenteses reduce using rule 2 (statements -> statements statement .)
+
+
+state 18
+
+    (4) statement -> While AbreParenteses . cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (34) cond_param -> . Var OpRelaMenor Inteiro
+    (35) cond_param -> . Var OpRelaMenor Real
+    (36) cond_param -> . Var OpRelaMenor Var
+    (37) cond_param -> . Var OpRelaMaior Inteiro
+    (38) cond_param -> . Var OpRelaMaior Real
+    (39) cond_param -> . Var OpRelaMaior Var
+    (40) cond_param -> . Var OpRelaMenorIgual Inteiro
+    (41) cond_param -> . Var OpRelaMenorIgual Real
+    (42) cond_param -> . Var OpRelaMenorIgual Var
+    (43) cond_param -> . Var OpRelaMaiorIgual Inteiro
+    (44) cond_param -> . Var OpRelaMaiorIgual Real
+    (45) cond_param -> . Var OpRelaMaiorIgual Var
+    (46) cond_param -> . Var OpRelaIgual Inteiro
+    (47) cond_param -> . Var OpRelaIgual Real
+    (48) cond_param -> . Var OpRelaIgual Var
+    (49) cond_param -> . Var OpRelaDiferente Inteiro
+    (50) cond_param -> . Var OpRelaDiferente Real
+    (51) cond_param -> . Var OpRelaDiferente Var
+    (52) cond_param -> . Var OpLogAnd Inteiro
+    (53) cond_param -> . Var OpLogAnd Real
+    (54) cond_param -> . Var OpLogAnd Var
+    (55) cond_param -> . Var OpLogOr Inteiro
+    (56) cond_param -> . Var OpLogOr Real
+    (57) cond_param -> . Var OpLogOr Var
+    (61) cond_param -> . cond_param OpLogAnd cond_param
+    (62) cond_param -> . cond_param OpLogOr cond_param
+
+    Var             shift and go to state 35
+
+    cond_param                     shift and go to state 34
+
+state 19
+
+    (80) funcao -> AbreParenteses param_vazio . FechaParenteses
+
+    FechaParenteses shift and go to state 36
+
+
+state 20
+
+    (81) funcao -> AbreParenteses param . FechaParenteses
+    (77) param -> param . Virgula param
+
+    FechaParenteses shift and go to state 37
+    Virgula         shift and go to state 38
+
+
+state 21
+
+    (73) param -> Inteiro .
+
+    FechaParenteses reduce using rule 73 (param -> Inteiro .)
+    Virgula         reduce using rule 73 (param -> Inteiro .)
+
+
+state 22
+
+    (74) param -> Real .
+
+    FechaParenteses reduce using rule 74 (param -> Real .)
+    Virgula         reduce using rule 74 (param -> Real .)
+
+
+state 23
+
+    (75) param -> Texto .
+
+    FechaParenteses reduce using rule 75 (param -> Texto .)
+    Virgula         reduce using rule 75 (param -> Texto .)
+
+
+state 24
+
+    (76) param -> Var .
+
+    FechaParenteses reduce using rule 76 (param -> Var .)
+    Virgula         reduce using rule 76 (param -> Var .)
+
+
+state 25
+
+    (9) statement -> Var OpAtrib . expr
+    (10) statement -> Var OpAtrib . Texto
+    (11) statement -> Var OpAtrib . Var
+    (12) statement -> Var OpAtrib . Inteiro
+    (13) statement -> Var OpAtrib . Real
+    (14) statement -> Var OpAtrib . funcao
+    (15) statement -> Var OpAtrib . entrada
+    (63) expr -> . Inteiro
+    (64) expr -> . Real
+    (65) expr -> . Var
+    (66) expr -> . expr OpMatSoma expr
+    (67) expr -> . expr OpMatSub expr
+    (68) expr -> . expr OpMatMult expr
+    (69) expr -> . expr OpMatDiv expr
+    (70) expr -> . AbreParenteses expr FechaParenteses
+    (71) expr -> . Texto
+    (80) funcao -> . AbreParenteses param_vazio FechaParenteses
+    (81) funcao -> . AbreParenteses param FechaParenteses
+    (78) entrada -> . Input AbreParenteses Texto FechaParenteses
+    (79) entrada -> . Input AbreParenteses FechaParenteses
+
+    Texto           shift and go to state 41
+    Var             shift and go to state 39
+    Inteiro         shift and go to state 42
+    Real            shift and go to state 43
+    AbreParenteses  shift and go to state 46
+    Input           shift and go to state 47
+
+    expr                           shift and go to state 40
+    funcao                         shift and go to state 44
+    entrada                        shift and go to state 45
+
+state 26
+
+    (33) statement -> funcao AbreParenteses . statements FechaParenteses
+    (2) statements -> . statements statement
+    (3) statements -> . statement
+    (4) statement -> . While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (9) statement -> . Var OpAtrib expr
+    (10) statement -> . Var OpAtrib Texto
+    (11) statement -> . Var OpAtrib Var
+    (12) statement -> . Var OpAtrib Inteiro
+    (13) statement -> . Var OpAtrib Real
+    (14) statement -> . Var OpAtrib funcao
+    (15) statement -> . Var OpAtrib entrada
+    (16) statement -> . tipoVar Var OpAtrib expr
+    (17) statement -> . TipoVarString Var OpAtrib Texto
+    (18) statement -> . tipoVar Var OpAtrib Var
+    (19) statement -> . TipoVarInt Var OpAtrib Inteiro
+    (20) statement -> . TipoVarReal Var OpAtrib Inteiro
+    (21) statement -> . TipoVarReal Var OpAtrib Real
+    (22) statement -> . tipoVar Var OpAtrib funcao
+    (23) statement -> . TipoVarString Var OpAtrib entrada
+    (24) statement -> . TipoVarInt Var OpAtrib entrada
+    (25) statement -> . TipoVarReal Var OpAtrib entrada
+    (26) statement -> . TipoVarBool Var OpAtrib entrada
+    (27) statement -> . TipoVarBool Var OpAtrib true_false
+    (28) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (29) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose
+    (30) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses
+    (31) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses
+    (32) statement -> . funcao
+    (33) statement -> . funcao AbreParenteses statements FechaParenteses
+    (58) statement -> . Print AbreParenteses expr FechaParenteses
+    (5) tipoVar -> . TipoVarInt
+    (6) tipoVar -> . TipoVarReal
+    (7) tipoVar -> . TipoVarString
+    (8) tipoVar -> . TipoVarBool
+    (80) funcao -> . AbreParenteses param_vazio FechaParenteses
+    (81) funcao -> . AbreParenteses param FechaParenteses
+
+    While           shift and go to state 5
+    Var             shift and go to state 7
+    TipoVarString   shift and go to state 10
+    TipoVarInt      shift and go to state 11
+    TipoVarReal     shift and go to state 12
+    TipoVarBool     shift and go to state 13
+    If              shift and go to state 14
+    Print           shift and go to state 15
+    AbreParenteses  shift and go to state 6
+
+    funcao                         shift and go to state 8
+    statements                     shift and go to state 48
+    statement                      shift and go to state 4
+    tipoVar                        shift and go to state 9
+
+state 27
+
+    (16) statement -> tipoVar Var . OpAtrib expr
+    (18) statement -> tipoVar Var . OpAtrib Var
+    (22) statement -> tipoVar Var . OpAtrib funcao
+
+    OpAtrib         shift and go to state 49
+
+
+state 28
+
+    (17) statement -> TipoVarString Var . OpAtrib Texto
+    (23) statement -> TipoVarString Var . OpAtrib entrada
+
+    OpAtrib         shift and go to state 50
+
+
+state 29
+
+    (19) statement -> TipoVarInt Var . OpAtrib Inteiro
+    (24) statement -> TipoVarInt Var . OpAtrib entrada
+
+    OpAtrib         shift and go to state 51
+
+
+state 30
+
+    (20) statement -> TipoVarReal Var . OpAtrib Inteiro
+    (21) statement -> TipoVarReal Var . OpAtrib Real
+    (25) statement -> TipoVarReal Var . OpAtrib entrada
+
+    OpAtrib         shift and go to state 52
+
+
+state 31
+
+    (26) statement -> TipoVarBool Var . OpAtrib entrada
+    (27) statement -> TipoVarBool Var . OpAtrib true_false
+
+    OpAtrib         shift and go to state 53
+
+
+state 32
+
+    (28) statement -> If AbreParenteses . cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (29) statement -> If AbreParenteses . cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose
+    (30) statement -> If AbreParenteses . cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses
+    (31) statement -> If AbreParenteses . cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses
+    (34) cond_param -> . Var OpRelaMenor Inteiro
+    (35) cond_param -> . Var OpRelaMenor Real
+    (36) cond_param -> . Var OpRelaMenor Var
+    (37) cond_param -> . Var OpRelaMaior Inteiro
+    (38) cond_param -> . Var OpRelaMaior Real
+    (39) cond_param -> . Var OpRelaMaior Var
+    (40) cond_param -> . Var OpRelaMenorIgual Inteiro
+    (41) cond_param -> . Var OpRelaMenorIgual Real
+    (42) cond_param -> . Var OpRelaMenorIgual Var
+    (43) cond_param -> . Var OpRelaMaiorIgual Inteiro
+    (44) cond_param -> . Var OpRelaMaiorIgual Real
+    (45) cond_param -> . Var OpRelaMaiorIgual Var
+    (46) cond_param -> . Var OpRelaIgual Inteiro
+    (47) cond_param -> . Var OpRelaIgual Real
+    (48) cond_param -> . Var OpRelaIgual Var
+    (49) cond_param -> . Var OpRelaDiferente Inteiro
+    (50) cond_param -> . Var OpRelaDiferente Real
+    (51) cond_param -> . Var OpRelaDiferente Var
+    (52) cond_param -> . Var OpLogAnd Inteiro
+    (53) cond_param -> . Var OpLogAnd Real
+    (54) cond_param -> . Var OpLogAnd Var
+    (55) cond_param -> . Var OpLogOr Inteiro
+    (56) cond_param -> . Var OpLogOr Real
+    (57) cond_param -> . Var OpLogOr Var
+    (61) cond_param -> . cond_param OpLogAnd cond_param
+    (62) cond_param -> . cond_param OpLogOr cond_param
+
+    Var             shift and go to state 35
+
+    cond_param                     shift and go to state 54
+
+state 33
+
+    (58) statement -> Print AbreParenteses . expr FechaParenteses
+    (63) expr -> . Inteiro
+    (64) expr -> . Real
+    (65) expr -> . Var
+    (66) expr -> . expr OpMatSoma expr
+    (67) expr -> . expr OpMatSub expr
+    (68) expr -> . expr OpMatMult expr
+    (69) expr -> . expr OpMatDiv expr
+    (70) expr -> . AbreParenteses expr FechaParenteses
+    (71) expr -> . Texto
+
+    Inteiro         shift and go to state 57
+    Real            shift and go to state 58
+    Var             shift and go to state 59
+    AbreParenteses  shift and go to state 55
+    Texto           shift and go to state 60
+
+    expr                           shift and go to state 56
+
+state 34
+
+    (4) statement -> While AbreParenteses cond_param . FechaParenteses AbreParenteses statements FechaParenteses
+    (61) cond_param -> cond_param . OpLogAnd cond_param
+    (62) cond_param -> cond_param . OpLogOr cond_param
+
+    FechaParenteses shift and go to state 61
+    OpLogAnd        shift and go to state 62
+    OpLogOr         shift and go to state 63
+
+
+state 35
+
+    (34) cond_param -> Var . OpRelaMenor Inteiro
+    (35) cond_param -> Var . OpRelaMenor Real
+    (36) cond_param -> Var . OpRelaMenor Var
+    (37) cond_param -> Var . OpRelaMaior Inteiro
+    (38) cond_param -> Var . OpRelaMaior Real
+    (39) cond_param -> Var . OpRelaMaior Var
+    (40) cond_param -> Var . OpRelaMenorIgual Inteiro
+    (41) cond_param -> Var . OpRelaMenorIgual Real
+    (42) cond_param -> Var . OpRelaMenorIgual Var
+    (43) cond_param -> Var . OpRelaMaiorIgual Inteiro
+    (44) cond_param -> Var . OpRelaMaiorIgual Real
+    (45) cond_param -> Var . OpRelaMaiorIgual Var
+    (46) cond_param -> Var . OpRelaIgual Inteiro
+    (47) cond_param -> Var . OpRelaIgual Real
+    (48) cond_param -> Var . OpRelaIgual Var
+    (49) cond_param -> Var . OpRelaDiferente Inteiro
+    (50) cond_param -> Var . OpRelaDiferente Real
+    (51) cond_param -> Var . OpRelaDiferente Var
+    (52) cond_param -> Var . OpLogAnd Inteiro
+    (53) cond_param -> Var . OpLogAnd Real
+    (54) cond_param -> Var . OpLogAnd Var
+    (55) cond_param -> Var . OpLogOr Inteiro
+    (56) cond_param -> Var . OpLogOr Real
+    (57) cond_param -> Var . OpLogOr Var
+
+    OpRelaMenor     shift and go to state 64
+    OpRelaMaior     shift and go to state 65
+    OpRelaMenorIgual shift and go to state 66
+    OpRelaMaiorIgual shift and go to state 67
+    OpRelaIgual     shift and go to state 68
+    OpRelaDiferente shift and go to state 69
+    OpLogAnd        shift and go to state 70
+    OpLogOr         shift and go to state 71
+
+
+state 36
+
+    (80) funcao -> AbreParenteses param_vazio FechaParenteses .
+
+    AbreParenteses  reduce using rule 80 (funcao -> AbreParenteses param_vazio FechaParenteses .)
+    Fim             reduce using rule 80 (funcao -> AbreParenteses param_vazio FechaParenteses .)
+    While           reduce using rule 80 (funcao -> AbreParenteses param_vazio FechaParenteses .)
+    Var             reduce using rule 80 (funcao -> AbreParenteses param_vazio FechaParenteses .)
+    TipoVarString   reduce using rule 80 (funcao -> AbreParenteses param_vazio FechaParenteses .)
+    TipoVarInt      reduce using rule 80 (funcao -> AbreParenteses param_vazio FechaParenteses .)
+    TipoVarReal     reduce using rule 80 (funcao -> AbreParenteses param_vazio FechaParenteses .)
+    TipoVarBool     reduce using rule 80 (funcao -> AbreParenteses param_vazio FechaParenteses .)
+    If              reduce using rule 80 (funcao -> AbreParenteses param_vazio FechaParenteses .)
+    Print           reduce using rule 80 (funcao -> AbreParenteses param_vazio FechaParenteses .)
+    FechaParenteses reduce using rule 80 (funcao -> AbreParenteses param_vazio FechaParenteses .)
+
+
+state 37
+
+    (81) funcao -> AbreParenteses param FechaParenteses .
+
+    AbreParenteses  reduce using rule 81 (funcao -> AbreParenteses param FechaParenteses .)
+    Fim             reduce using rule 81 (funcao -> AbreParenteses param FechaParenteses .)
+    While           reduce using rule 81 (funcao -> AbreParenteses param FechaParenteses .)
+    Var             reduce using rule 81 (funcao -> AbreParenteses param FechaParenteses .)
+    TipoVarString   reduce using rule 81 (funcao -> AbreParenteses param FechaParenteses .)
+    TipoVarInt      reduce using rule 81 (funcao -> AbreParenteses param FechaParenteses .)
+    TipoVarReal     reduce using rule 81 (funcao -> AbreParenteses param FechaParenteses .)
+    TipoVarBool     reduce using rule 81 (funcao -> AbreParenteses param FechaParenteses .)
+    If              reduce using rule 81 (funcao -> AbreParenteses param FechaParenteses .)
+    Print           reduce using rule 81 (funcao -> AbreParenteses param FechaParenteses .)
+    FechaParenteses reduce using rule 81 (funcao -> AbreParenteses param FechaParenteses .)
+
+
+state 38
+
+    (77) param -> param Virgula . param
+    (73) param -> . Inteiro
+    (74) param -> . Real
+    (75) param -> . Texto
+    (76) param -> . Var
+    (77) param -> . param Virgula param
+
+    Inteiro         shift and go to state 21
+    Real            shift and go to state 22
+    Texto           shift and go to state 23
+    Var             shift and go to state 24
+
+    param                          shift and go to state 72
+
+state 39
+
+    (11) statement -> Var OpAtrib Var .
+    (65) expr -> Var .
+
+  ! reduce/reduce conflict for Fim resolved using rule 11 (statement -> Var OpAtrib Var .)
+  ! reduce/reduce conflict for While resolved using rule 11 (statement -> Var OpAtrib Var .)
+  ! reduce/reduce conflict for Var resolved using rule 11 (statement -> Var OpAtrib Var .)
+  ! reduce/reduce conflict for TipoVarString resolved using rule 11 (statement -> Var OpAtrib Var .)
+  ! reduce/reduce conflict for TipoVarInt resolved using rule 11 (statement -> Var OpAtrib Var .)
+  ! reduce/reduce conflict for TipoVarReal resolved using rule 11 (statement -> Var OpAtrib Var .)
+  ! reduce/reduce conflict for TipoVarBool resolved using rule 11 (statement -> Var OpAtrib Var .)
+  ! reduce/reduce conflict for If resolved using rule 11 (statement -> Var OpAtrib Var .)
+  ! reduce/reduce conflict for Print resolved using rule 11 (statement -> Var OpAtrib Var .)
+  ! reduce/reduce conflict for AbreParenteses resolved using rule 11 (statement -> Var OpAtrib Var .)
+  ! reduce/reduce conflict for FechaParenteses resolved using rule 11 (statement -> Var OpAtrib Var .)
+    Fim             reduce using rule 11 (statement -> Var OpAtrib Var .)
+    While           reduce using rule 11 (statement -> Var OpAtrib Var .)
+    Var             reduce using rule 11 (statement -> Var OpAtrib Var .)
+    TipoVarString   reduce using rule 11 (statement -> Var OpAtrib Var .)
+    TipoVarInt      reduce using rule 11 (statement -> Var OpAtrib Var .)
+    TipoVarReal     reduce using rule 11 (statement -> Var OpAtrib Var .)
+    TipoVarBool     reduce using rule 11 (statement -> Var OpAtrib Var .)
+    If              reduce using rule 11 (statement -> Var OpAtrib Var .)
+    Print           reduce using rule 11 (statement -> Var OpAtrib Var .)
+    AbreParenteses  reduce using rule 11 (statement -> Var OpAtrib Var .)
+    FechaParenteses reduce using rule 11 (statement -> Var OpAtrib Var .)
+    OpMatSoma       reduce using rule 65 (expr -> Var .)
+    OpMatSub        reduce using rule 65 (expr -> Var .)
+    OpMatMult       reduce using rule 65 (expr -> Var .)
+    OpMatDiv        reduce using rule 65 (expr -> Var .)
+
+  ! Fim             [ reduce using rule 65 (expr -> Var .) ]
+  ! While           [ reduce using rule 65 (expr -> Var .) ]
+  ! Var             [ reduce using rule 65 (expr -> Var .) ]
+  ! TipoVarString   [ reduce using rule 65 (expr -> Var .) ]
+  ! TipoVarInt      [ reduce using rule 65 (expr -> Var .) ]
+  ! TipoVarReal     [ reduce using rule 65 (expr -> Var .) ]
+  ! TipoVarBool     [ reduce using rule 65 (expr -> Var .) ]
+  ! If              [ reduce using rule 65 (expr -> Var .) ]
+  ! Print           [ reduce using rule 65 (expr -> Var .) ]
+  ! AbreParenteses  [ reduce using rule 65 (expr -> Var .) ]
+  ! FechaParenteses [ reduce using rule 65 (expr -> Var .) ]
+
+
+state 40
+
+    (9) statement -> Var OpAtrib expr .
+    (66) expr -> expr . OpMatSoma expr
+    (67) expr -> expr . OpMatSub expr
+    (68) expr -> expr . OpMatMult expr
+    (69) expr -> expr . OpMatDiv expr
+
+    Fim             reduce using rule 9 (statement -> Var OpAtrib expr .)
+    While           reduce using rule 9 (statement -> Var OpAtrib expr .)
+    Var             reduce using rule 9 (statement -> Var OpAtrib expr .)
+    TipoVarString   reduce using rule 9 (statement -> Var OpAtrib expr .)
+    TipoVarInt      reduce using rule 9 (statement -> Var OpAtrib expr .)
+    TipoVarReal     reduce using rule 9 (statement -> Var OpAtrib expr .)
+    TipoVarBool     reduce using rule 9 (statement -> Var OpAtrib expr .)
+    If              reduce using rule 9 (statement -> Var OpAtrib expr .)
+    Print           reduce using rule 9 (statement -> Var OpAtrib expr .)
+    AbreParenteses  reduce using rule 9 (statement -> Var OpAtrib expr .)
+    FechaParenteses reduce using rule 9 (statement -> Var OpAtrib expr .)
+    OpMatSoma       shift and go to state 73
+    OpMatSub        shift and go to state 74
+    OpMatMult       shift and go to state 75
+    OpMatDiv        shift and go to state 76
+
+
+state 41
+
+    (10) statement -> Var OpAtrib Texto .
+    (71) expr -> Texto .
+
+  ! reduce/reduce conflict for Fim resolved using rule 10 (statement -> Var OpAtrib Texto .)
+  ! reduce/reduce conflict for While resolved using rule 10 (statement -> Var OpAtrib Texto .)
+  ! reduce/reduce conflict for Var resolved using rule 10 (statement -> Var OpAtrib Texto .)
+  ! reduce/reduce conflict for TipoVarString resolved using rule 10 (statement -> Var OpAtrib Texto .)
+  ! reduce/reduce conflict for TipoVarInt resolved using rule 10 (statement -> Var OpAtrib Texto .)
+  ! reduce/reduce conflict for TipoVarReal resolved using rule 10 (statement -> Var OpAtrib Texto .)
+  ! reduce/reduce conflict for TipoVarBool resolved using rule 10 (statement -> Var OpAtrib Texto .)
+  ! reduce/reduce conflict for If resolved using rule 10 (statement -> Var OpAtrib Texto .)
+  ! reduce/reduce conflict for Print resolved using rule 10 (statement -> Var OpAtrib Texto .)
+  ! reduce/reduce conflict for AbreParenteses resolved using rule 10 (statement -> Var OpAtrib Texto .)
+  ! reduce/reduce conflict for FechaParenteses resolved using rule 10 (statement -> Var OpAtrib Texto .)
+    Fim             reduce using rule 10 (statement -> Var OpAtrib Texto .)
+    While           reduce using rule 10 (statement -> Var OpAtrib Texto .)
+    Var             reduce using rule 10 (statement -> Var OpAtrib Texto .)
+    TipoVarString   reduce using rule 10 (statement -> Var OpAtrib Texto .)
+    TipoVarInt      reduce using rule 10 (statement -> Var OpAtrib Texto .)
+    TipoVarReal     reduce using rule 10 (statement -> Var OpAtrib Texto .)
+    TipoVarBool     reduce using rule 10 (statement -> Var OpAtrib Texto .)
+    If              reduce using rule 10 (statement -> Var OpAtrib Texto .)
+    Print           reduce using rule 10 (statement -> Var OpAtrib Texto .)
+    AbreParenteses  reduce using rule 10 (statement -> Var OpAtrib Texto .)
+    FechaParenteses reduce using rule 10 (statement -> Var OpAtrib Texto .)
+    OpMatSoma       reduce using rule 71 (expr -> Texto .)
+    OpMatSub        reduce using rule 71 (expr -> Texto .)
+    OpMatMult       reduce using rule 71 (expr -> Texto .)
+    OpMatDiv        reduce using rule 71 (expr -> Texto .)
+
+  ! Fim             [ reduce using rule 71 (expr -> Texto .) ]
+  ! While           [ reduce using rule 71 (expr -> Texto .) ]
+  ! Var             [ reduce using rule 71 (expr -> Texto .) ]
+  ! TipoVarString   [ reduce using rule 71 (expr -> Texto .) ]
+  ! TipoVarInt      [ reduce using rule 71 (expr -> Texto .) ]
+  ! TipoVarReal     [ reduce using rule 71 (expr -> Texto .) ]
+  ! TipoVarBool     [ reduce using rule 71 (expr -> Texto .) ]
+  ! If              [ reduce using rule 71 (expr -> Texto .) ]
+  ! Print           [ reduce using rule 71 (expr -> Texto .) ]
+  ! AbreParenteses  [ reduce using rule 71 (expr -> Texto .) ]
+  ! FechaParenteses [ reduce using rule 71 (expr -> Texto .) ]
+
+
+state 42
+
+    (12) statement -> Var OpAtrib Inteiro .
+    (63) expr -> Inteiro .
+
+  ! reduce/reduce conflict for Fim resolved using rule 12 (statement -> Var OpAtrib Inteiro .)
+  ! reduce/reduce conflict for While resolved using rule 12 (statement -> Var OpAtrib Inteiro .)
+  ! reduce/reduce conflict for Var resolved using rule 12 (statement -> Var OpAtrib Inteiro .)
+  ! reduce/reduce conflict for TipoVarString resolved using rule 12 (statement -> Var OpAtrib Inteiro .)
+  ! reduce/reduce conflict for TipoVarInt resolved using rule 12 (statement -> Var OpAtrib Inteiro .)
+  ! reduce/reduce conflict for TipoVarReal resolved using rule 12 (statement -> Var OpAtrib Inteiro .)
+  ! reduce/reduce conflict for TipoVarBool resolved using rule 12 (statement -> Var OpAtrib Inteiro .)
+  ! reduce/reduce conflict for If resolved using rule 12 (statement -> Var OpAtrib Inteiro .)
+  ! reduce/reduce conflict for Print resolved using rule 12 (statement -> Var OpAtrib Inteiro .)
+  ! reduce/reduce conflict for AbreParenteses resolved using rule 12 (statement -> Var OpAtrib Inteiro .)
+  ! reduce/reduce conflict for FechaParenteses resolved using rule 12 (statement -> Var OpAtrib Inteiro .)
+    Fim             reduce using rule 12 (statement -> Var OpAtrib Inteiro .)
+    While           reduce using rule 12 (statement -> Var OpAtrib Inteiro .)
+    Var             reduce using rule 12 (statement -> Var OpAtrib Inteiro .)
+    TipoVarString   reduce using rule 12 (statement -> Var OpAtrib Inteiro .)
+    TipoVarInt      reduce using rule 12 (statement -> Var OpAtrib Inteiro .)
+    TipoVarReal     reduce using rule 12 (statement -> Var OpAtrib Inteiro .)
+    TipoVarBool     reduce using rule 12 (statement -> Var OpAtrib Inteiro .)
+    If              reduce using rule 12 (statement -> Var OpAtrib Inteiro .)
+    Print           reduce using rule 12 (statement -> Var OpAtrib Inteiro .)
+    AbreParenteses  reduce using rule 12 (statement -> Var OpAtrib Inteiro .)
+    FechaParenteses reduce using rule 12 (statement -> Var OpAtrib Inteiro .)
+    OpMatSoma       reduce using rule 63 (expr -> Inteiro .)
+    OpMatSub        reduce using rule 63 (expr -> Inteiro .)
+    OpMatMult       reduce using rule 63 (expr -> Inteiro .)
+    OpMatDiv        reduce using rule 63 (expr -> Inteiro .)
+
+  ! Fim             [ reduce using rule 63 (expr -> Inteiro .) ]
+  ! While           [ reduce using rule 63 (expr -> Inteiro .) ]
+  ! Var             [ reduce using rule 63 (expr -> Inteiro .) ]
+  ! TipoVarString   [ reduce using rule 63 (expr -> Inteiro .) ]
+  ! TipoVarInt      [ reduce using rule 63 (expr -> Inteiro .) ]
+  ! TipoVarReal     [ reduce using rule 63 (expr -> Inteiro .) ]
+  ! TipoVarBool     [ reduce using rule 63 (expr -> Inteiro .) ]
+  ! If              [ reduce using rule 63 (expr -> Inteiro .) ]
+  ! Print           [ reduce using rule 63 (expr -> Inteiro .) ]
+  ! AbreParenteses  [ reduce using rule 63 (expr -> Inteiro .) ]
+  ! FechaParenteses [ reduce using rule 63 (expr -> Inteiro .) ]
+
+
+state 43
+
+    (13) statement -> Var OpAtrib Real .
+    (64) expr -> Real .
+
+  ! reduce/reduce conflict for Fim resolved using rule 13 (statement -> Var OpAtrib Real .)
+  ! reduce/reduce conflict for While resolved using rule 13 (statement -> Var OpAtrib Real .)
+  ! reduce/reduce conflict for Var resolved using rule 13 (statement -> Var OpAtrib Real .)
+  ! reduce/reduce conflict for TipoVarString resolved using rule 13 (statement -> Var OpAtrib Real .)
+  ! reduce/reduce conflict for TipoVarInt resolved using rule 13 (statement -> Var OpAtrib Real .)
+  ! reduce/reduce conflict for TipoVarReal resolved using rule 13 (statement -> Var OpAtrib Real .)
+  ! reduce/reduce conflict for TipoVarBool resolved using rule 13 (statement -> Var OpAtrib Real .)
+  ! reduce/reduce conflict for If resolved using rule 13 (statement -> Var OpAtrib Real .)
+  ! reduce/reduce conflict for Print resolved using rule 13 (statement -> Var OpAtrib Real .)
+  ! reduce/reduce conflict for AbreParenteses resolved using rule 13 (statement -> Var OpAtrib Real .)
+  ! reduce/reduce conflict for FechaParenteses resolved using rule 13 (statement -> Var OpAtrib Real .)
+    Fim             reduce using rule 13 (statement -> Var OpAtrib Real .)
+    While           reduce using rule 13 (statement -> Var OpAtrib Real .)
+    Var             reduce using rule 13 (statement -> Var OpAtrib Real .)
+    TipoVarString   reduce using rule 13 (statement -> Var OpAtrib Real .)
+    TipoVarInt      reduce using rule 13 (statement -> Var OpAtrib Real .)
+    TipoVarReal     reduce using rule 13 (statement -> Var OpAtrib Real .)
+    TipoVarBool     reduce using rule 13 (statement -> Var OpAtrib Real .)
+    If              reduce using rule 13 (statement -> Var OpAtrib Real .)
+    Print           reduce using rule 13 (statement -> Var OpAtrib Real .)
+    AbreParenteses  reduce using rule 13 (statement -> Var OpAtrib Real .)
+    FechaParenteses reduce using rule 13 (statement -> Var OpAtrib Real .)
+    OpMatSoma       reduce using rule 64 (expr -> Real .)
+    OpMatSub        reduce using rule 64 (expr -> Real .)
+    OpMatMult       reduce using rule 64 (expr -> Real .)
+    OpMatDiv        reduce using rule 64 (expr -> Real .)
+
+  ! Fim             [ reduce using rule 64 (expr -> Real .) ]
+  ! While           [ reduce using rule 64 (expr -> Real .) ]
+  ! Var             [ reduce using rule 64 (expr -> Real .) ]
+  ! TipoVarString   [ reduce using rule 64 (expr -> Real .) ]
+  ! TipoVarInt      [ reduce using rule 64 (expr -> Real .) ]
+  ! TipoVarReal     [ reduce using rule 64 (expr -> Real .) ]
+  ! TipoVarBool     [ reduce using rule 64 (expr -> Real .) ]
+  ! If              [ reduce using rule 64 (expr -> Real .) ]
+  ! Print           [ reduce using rule 64 (expr -> Real .) ]
+  ! AbreParenteses  [ reduce using rule 64 (expr -> Real .) ]
+  ! FechaParenteses [ reduce using rule 64 (expr -> Real .) ]
+
+
+state 44
+
+    (14) statement -> Var OpAtrib funcao .
+
+    Fim             reduce using rule 14 (statement -> Var OpAtrib funcao .)
+    While           reduce using rule 14 (statement -> Var OpAtrib funcao .)
+    Var             reduce using rule 14 (statement -> Var OpAtrib funcao .)
+    TipoVarString   reduce using rule 14 (statement -> Var OpAtrib funcao .)
+    TipoVarInt      reduce using rule 14 (statement -> Var OpAtrib funcao .)
+    TipoVarReal     reduce using rule 14 (statement -> Var OpAtrib funcao .)
+    TipoVarBool     reduce using rule 14 (statement -> Var OpAtrib funcao .)
+    If              reduce using rule 14 (statement -> Var OpAtrib funcao .)
+    Print           reduce using rule 14 (statement -> Var OpAtrib funcao .)
+    AbreParenteses  reduce using rule 14 (statement -> Var OpAtrib funcao .)
+    FechaParenteses reduce using rule 14 (statement -> Var OpAtrib funcao .)
+
+
+state 45
+
+    (15) statement -> Var OpAtrib entrada .
+
+    Fim             reduce using rule 15 (statement -> Var OpAtrib entrada .)
+    While           reduce using rule 15 (statement -> Var OpAtrib entrada .)
+    Var             reduce using rule 15 (statement -> Var OpAtrib entrada .)
+    TipoVarString   reduce using rule 15 (statement -> Var OpAtrib entrada .)
+    TipoVarInt      reduce using rule 15 (statement -> Var OpAtrib entrada .)
+    TipoVarReal     reduce using rule 15 (statement -> Var OpAtrib entrada .)
+    TipoVarBool     reduce using rule 15 (statement -> Var OpAtrib entrada .)
+    If              reduce using rule 15 (statement -> Var OpAtrib entrada .)
+    Print           reduce using rule 15 (statement -> Var OpAtrib entrada .)
+    AbreParenteses  reduce using rule 15 (statement -> Var OpAtrib entrada .)
+    FechaParenteses reduce using rule 15 (statement -> Var OpAtrib entrada .)
+
+
+state 46
+
+    (70) expr -> AbreParenteses . expr FechaParenteses
+    (80) funcao -> AbreParenteses . param_vazio FechaParenteses
+    (81) funcao -> AbreParenteses . param FechaParenteses
+    (63) expr -> . Inteiro
+    (64) expr -> . Real
+    (65) expr -> . Var
+    (66) expr -> . expr OpMatSoma expr
+    (67) expr -> . expr OpMatSub expr
+    (68) expr -> . expr OpMatMult expr
+    (69) expr -> . expr OpMatDiv expr
+    (70) expr -> . AbreParenteses expr FechaParenteses
+    (71) expr -> . Texto
+    (72) param_vazio -> .
+    (73) param -> . Inteiro
+    (74) param -> . Real
+    (75) param -> . Texto
+    (76) param -> . Var
+    (77) param -> . param Virgula param
+
+    Inteiro         shift and go to state 78
+    Real            shift and go to state 79
+    Var             shift and go to state 80
+    AbreParenteses  shift and go to state 55
+    Texto           shift and go to state 81
+    FechaParenteses reduce using rule 72 (param_vazio -> .)
+
+    expr                           shift and go to state 77
+    param_vazio                    shift and go to state 19
+    param                          shift and go to state 20
+
+state 47
+
+    (78) entrada -> Input . AbreParenteses Texto FechaParenteses
+    (79) entrada -> Input . AbreParenteses FechaParenteses
+
+    AbreParenteses  shift and go to state 82
+
+
+state 48
+
+    (33) statement -> funcao AbreParenteses statements . FechaParenteses
+    (2) statements -> statements . statement
+    (4) statement -> . While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (9) statement -> . Var OpAtrib expr
+    (10) statement -> . Var OpAtrib Texto
+    (11) statement -> . Var OpAtrib Var
+    (12) statement -> . Var OpAtrib Inteiro
+    (13) statement -> . Var OpAtrib Real
+    (14) statement -> . Var OpAtrib funcao
+    (15) statement -> . Var OpAtrib entrada
+    (16) statement -> . tipoVar Var OpAtrib expr
+    (17) statement -> . TipoVarString Var OpAtrib Texto
+    (18) statement -> . tipoVar Var OpAtrib Var
+    (19) statement -> . TipoVarInt Var OpAtrib Inteiro
+    (20) statement -> . TipoVarReal Var OpAtrib Inteiro
+    (21) statement -> . TipoVarReal Var OpAtrib Real
+    (22) statement -> . tipoVar Var OpAtrib funcao
+    (23) statement -> . TipoVarString Var OpAtrib entrada
+    (24) statement -> . TipoVarInt Var OpAtrib entrada
+    (25) statement -> . TipoVarReal Var OpAtrib entrada
+    (26) statement -> . TipoVarBool Var OpAtrib entrada
+    (27) statement -> . TipoVarBool Var OpAtrib true_false
+    (28) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (29) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose
+    (30) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses
+    (31) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses
+    (32) statement -> . funcao
+    (33) statement -> . funcao AbreParenteses statements FechaParenteses
+    (58) statement -> . Print AbreParenteses expr FechaParenteses
+    (5) tipoVar -> . TipoVarInt
+    (6) tipoVar -> . TipoVarReal
+    (7) tipoVar -> . TipoVarString
+    (8) tipoVar -> . TipoVarBool
+    (80) funcao -> . AbreParenteses param_vazio FechaParenteses
+    (81) funcao -> . AbreParenteses param FechaParenteses
+
+    FechaParenteses shift and go to state 83
+    While           shift and go to state 5
+    Var             shift and go to state 7
+    TipoVarString   shift and go to state 10
+    TipoVarInt      shift and go to state 11
+    TipoVarReal     shift and go to state 12
+    TipoVarBool     shift and go to state 13
+    If              shift and go to state 14
+    Print           shift and go to state 15
+    AbreParenteses  shift and go to state 6
+
+    funcao                         shift and go to state 8
+    statement                      shift and go to state 17
+    tipoVar                        shift and go to state 9
+
+state 49
+
+    (16) statement -> tipoVar Var OpAtrib . expr
+    (18) statement -> tipoVar Var OpAtrib . Var
+    (22) statement -> tipoVar Var OpAtrib . funcao
+    (63) expr -> . Inteiro
+    (64) expr -> . Real
+    (65) expr -> . Var
+    (66) expr -> . expr OpMatSoma expr
+    (67) expr -> . expr OpMatSub expr
+    (68) expr -> . expr OpMatMult expr
+    (69) expr -> . expr OpMatDiv expr
+    (70) expr -> . AbreParenteses expr FechaParenteses
+    (71) expr -> . Texto
+    (80) funcao -> . AbreParenteses param_vazio FechaParenteses
+    (81) funcao -> . AbreParenteses param FechaParenteses
+
+    Var             shift and go to state 84
+    Inteiro         shift and go to state 57
+    Real            shift and go to state 58
+    AbreParenteses  shift and go to state 46
+    Texto           shift and go to state 60
+
+    expr                           shift and go to state 85
+    funcao                         shift and go to state 86
+
+state 50
+
+    (17) statement -> TipoVarString Var OpAtrib . Texto
+    (23) statement -> TipoVarString Var OpAtrib . entrada
+    (78) entrada -> . Input AbreParenteses Texto FechaParenteses
+    (79) entrada -> . Input AbreParenteses FechaParenteses
+
+    Texto           shift and go to state 87
+    Input           shift and go to state 47
+
+    entrada                        shift and go to state 88
+
+state 51
+
+    (19) statement -> TipoVarInt Var OpAtrib . Inteiro
+    (24) statement -> TipoVarInt Var OpAtrib . entrada
+    (78) entrada -> . Input AbreParenteses Texto FechaParenteses
+    (79) entrada -> . Input AbreParenteses FechaParenteses
+
+    Inteiro         shift and go to state 89
+    Input           shift and go to state 47
+
+    entrada                        shift and go to state 90
+
+state 52
+
+    (20) statement -> TipoVarReal Var OpAtrib . Inteiro
+    (21) statement -> TipoVarReal Var OpAtrib . Real
+    (25) statement -> TipoVarReal Var OpAtrib . entrada
+    (78) entrada -> . Input AbreParenteses Texto FechaParenteses
+    (79) entrada -> . Input AbreParenteses FechaParenteses
+
+    Inteiro         shift and go to state 91
+    Real            shift and go to state 92
+    Input           shift and go to state 47
+
+    entrada                        shift and go to state 93
+
+state 53
+
+    (26) statement -> TipoVarBool Var OpAtrib . entrada
+    (27) statement -> TipoVarBool Var OpAtrib . true_false
+    (78) entrada -> . Input AbreParenteses Texto FechaParenteses
+    (79) entrada -> . Input AbreParenteses FechaParenteses
+    (59) true_false -> . BoolTrue
+    (60) true_false -> . BoolFalse
+
+    Input           shift and go to state 47
+    BoolTrue        shift and go to state 96
+    BoolFalse       shift and go to state 97
+
+    entrada                        shift and go to state 94
+    true_false                     shift and go to state 95
+
+state 54
+
+    (28) statement -> If AbreParenteses cond_param . FechaParenteses AbreParenteses statements FechaParenteses
+    (29) statement -> If AbreParenteses cond_param . FechaParenteses AbreParenteses statements FechaParenteses senaose
+    (30) statement -> If AbreParenteses cond_param . FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses
+    (31) statement -> If AbreParenteses cond_param . FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses
+    (61) cond_param -> cond_param . OpLogAnd cond_param
+    (62) cond_param -> cond_param . OpLogOr cond_param
+
+    FechaParenteses shift and go to state 98
+    OpLogAnd        shift and go to state 62
+    OpLogOr         shift and go to state 63
+
+
+state 55
+
+    (70) expr -> AbreParenteses . expr FechaParenteses
+    (63) expr -> . Inteiro
+    (64) expr -> . Real
+    (65) expr -> . Var
+    (66) expr -> . expr OpMatSoma expr
+    (67) expr -> . expr OpMatSub expr
+    (68) expr -> . expr OpMatMult expr
+    (69) expr -> . expr OpMatDiv expr
+    (70) expr -> . AbreParenteses expr FechaParenteses
+    (71) expr -> . Texto
+
+    Inteiro         shift and go to state 57
+    Real            shift and go to state 58
+    Var             shift and go to state 59
+    AbreParenteses  shift and go to state 55
+    Texto           shift and go to state 60
+
+    expr                           shift and go to state 77
+
+state 56
+
+    (58) statement -> Print AbreParenteses expr . FechaParenteses
+    (66) expr -> expr . OpMatSoma expr
+    (67) expr -> expr . OpMatSub expr
+    (68) expr -> expr . OpMatMult expr
+    (69) expr -> expr . OpMatDiv expr
+
+    FechaParenteses shift and go to state 99
+    OpMatSoma       shift and go to state 73
+    OpMatSub        shift and go to state 74
+    OpMatMult       shift and go to state 75
+    OpMatDiv        shift and go to state 76
+
+
+state 57
+
+    (63) expr -> Inteiro .
+
+    FechaParenteses reduce using rule 63 (expr -> Inteiro .)
+    OpMatSoma       reduce using rule 63 (expr -> Inteiro .)
+    OpMatSub        reduce using rule 63 (expr -> Inteiro .)
+    OpMatMult       reduce using rule 63 (expr -> Inteiro .)
+    OpMatDiv        reduce using rule 63 (expr -> Inteiro .)
+    Fim             reduce using rule 63 (expr -> Inteiro .)
+    While           reduce using rule 63 (expr -> Inteiro .)
+    Var             reduce using rule 63 (expr -> Inteiro .)
+    TipoVarString   reduce using rule 63 (expr -> Inteiro .)
+    TipoVarInt      reduce using rule 63 (expr -> Inteiro .)
+    TipoVarReal     reduce using rule 63 (expr -> Inteiro .)
+    TipoVarBool     reduce using rule 63 (expr -> Inteiro .)
+    If              reduce using rule 63 (expr -> Inteiro .)
+    Print           reduce using rule 63 (expr -> Inteiro .)
+    AbreParenteses  reduce using rule 63 (expr -> Inteiro .)
+
+
+state 58
+
+    (64) expr -> Real .
+
+    FechaParenteses reduce using rule 64 (expr -> Real .)
+    OpMatSoma       reduce using rule 64 (expr -> Real .)
+    OpMatSub        reduce using rule 64 (expr -> Real .)
+    OpMatMult       reduce using rule 64 (expr -> Real .)
+    OpMatDiv        reduce using rule 64 (expr -> Real .)
+    Fim             reduce using rule 64 (expr -> Real .)
+    While           reduce using rule 64 (expr -> Real .)
+    Var             reduce using rule 64 (expr -> Real .)
+    TipoVarString   reduce using rule 64 (expr -> Real .)
+    TipoVarInt      reduce using rule 64 (expr -> Real .)
+    TipoVarReal     reduce using rule 64 (expr -> Real .)
+    TipoVarBool     reduce using rule 64 (expr -> Real .)
+    If              reduce using rule 64 (expr -> Real .)
+    Print           reduce using rule 64 (expr -> Real .)
+    AbreParenteses  reduce using rule 64 (expr -> Real .)
+
+
+state 59
+
+    (65) expr -> Var .
+
+    FechaParenteses reduce using rule 65 (expr -> Var .)
+    OpMatSoma       reduce using rule 65 (expr -> Var .)
+    OpMatSub        reduce using rule 65 (expr -> Var .)
+    OpMatMult       reduce using rule 65 (expr -> Var .)
+    OpMatDiv        reduce using rule 65 (expr -> Var .)
+    Fim             reduce using rule 65 (expr -> Var .)
+    While           reduce using rule 65 (expr -> Var .)
+    Var             reduce using rule 65 (expr -> Var .)
+    TipoVarString   reduce using rule 65 (expr -> Var .)
+    TipoVarInt      reduce using rule 65 (expr -> Var .)
+    TipoVarReal     reduce using rule 65 (expr -> Var .)
+    TipoVarBool     reduce using rule 65 (expr -> Var .)
+    If              reduce using rule 65 (expr -> Var .)
+    Print           reduce using rule 65 (expr -> Var .)
+    AbreParenteses  reduce using rule 65 (expr -> Var .)
+
+
+state 60
+
+    (71) expr -> Texto .
+
+    FechaParenteses reduce using rule 71 (expr -> Texto .)
+    OpMatSoma       reduce using rule 71 (expr -> Texto .)
+    OpMatSub        reduce using rule 71 (expr -> Texto .)
+    OpMatMult       reduce using rule 71 (expr -> Texto .)
+    OpMatDiv        reduce using rule 71 (expr -> Texto .)
+    Fim             reduce using rule 71 (expr -> Texto .)
+    While           reduce using rule 71 (expr -> Texto .)
+    Var             reduce using rule 71 (expr -> Texto .)
+    TipoVarString   reduce using rule 71 (expr -> Texto .)
+    TipoVarInt      reduce using rule 71 (expr -> Texto .)
+    TipoVarReal     reduce using rule 71 (expr -> Texto .)
+    TipoVarBool     reduce using rule 71 (expr -> Texto .)
+    If              reduce using rule 71 (expr -> Texto .)
+    Print           reduce using rule 71 (expr -> Texto .)
+    AbreParenteses  reduce using rule 71 (expr -> Texto .)
+
+
+state 61
+
+    (4) statement -> While AbreParenteses cond_param FechaParenteses . AbreParenteses statements FechaParenteses
+
+    AbreParenteses  shift and go to state 100
+
+
+state 62
+
+    (61) cond_param -> cond_param OpLogAnd . cond_param
+    (34) cond_param -> . Var OpRelaMenor Inteiro
+    (35) cond_param -> . Var OpRelaMenor Real
+    (36) cond_param -> . Var OpRelaMenor Var
+    (37) cond_param -> . Var OpRelaMaior Inteiro
+    (38) cond_param -> . Var OpRelaMaior Real
+    (39) cond_param -> . Var OpRelaMaior Var
+    (40) cond_param -> . Var OpRelaMenorIgual Inteiro
+    (41) cond_param -> . Var OpRelaMenorIgual Real
+    (42) cond_param -> . Var OpRelaMenorIgual Var
+    (43) cond_param -> . Var OpRelaMaiorIgual Inteiro
+    (44) cond_param -> . Var OpRelaMaiorIgual Real
+    (45) cond_param -> . Var OpRelaMaiorIgual Var
+    (46) cond_param -> . Var OpRelaIgual Inteiro
+    (47) cond_param -> . Var OpRelaIgual Real
+    (48) cond_param -> . Var OpRelaIgual Var
+    (49) cond_param -> . Var OpRelaDiferente Inteiro
+    (50) cond_param -> . Var OpRelaDiferente Real
+    (51) cond_param -> . Var OpRelaDiferente Var
+    (52) cond_param -> . Var OpLogAnd Inteiro
+    (53) cond_param -> . Var OpLogAnd Real
+    (54) cond_param -> . Var OpLogAnd Var
+    (55) cond_param -> . Var OpLogOr Inteiro
+    (56) cond_param -> . Var OpLogOr Real
+    (57) cond_param -> . Var OpLogOr Var
+    (61) cond_param -> . cond_param OpLogAnd cond_param
+    (62) cond_param -> . cond_param OpLogOr cond_param
+
+    Var             shift and go to state 35
+
+    cond_param                     shift and go to state 101
+
+state 63
+
+    (62) cond_param -> cond_param OpLogOr . cond_param
+    (34) cond_param -> . Var OpRelaMenor Inteiro
+    (35) cond_param -> . Var OpRelaMenor Real
+    (36) cond_param -> . Var OpRelaMenor Var
+    (37) cond_param -> . Var OpRelaMaior Inteiro
+    (38) cond_param -> . Var OpRelaMaior Real
+    (39) cond_param -> . Var OpRelaMaior Var
+    (40) cond_param -> . Var OpRelaMenorIgual Inteiro
+    (41) cond_param -> . Var OpRelaMenorIgual Real
+    (42) cond_param -> . Var OpRelaMenorIgual Var
+    (43) cond_param -> . Var OpRelaMaiorIgual Inteiro
+    (44) cond_param -> . Var OpRelaMaiorIgual Real
+    (45) cond_param -> . Var OpRelaMaiorIgual Var
+    (46) cond_param -> . Var OpRelaIgual Inteiro
+    (47) cond_param -> . Var OpRelaIgual Real
+    (48) cond_param -> . Var OpRelaIgual Var
+    (49) cond_param -> . Var OpRelaDiferente Inteiro
+    (50) cond_param -> . Var OpRelaDiferente Real
+    (51) cond_param -> . Var OpRelaDiferente Var
+    (52) cond_param -> . Var OpLogAnd Inteiro
+    (53) cond_param -> . Var OpLogAnd Real
+    (54) cond_param -> . Var OpLogAnd Var
+    (55) cond_param -> . Var OpLogOr Inteiro
+    (56) cond_param -> . Var OpLogOr Real
+    (57) cond_param -> . Var OpLogOr Var
+    (61) cond_param -> . cond_param OpLogAnd cond_param
+    (62) cond_param -> . cond_param OpLogOr cond_param
+
+    Var             shift and go to state 35
+
+    cond_param                     shift and go to state 102
+
+state 64
+
+    (34) cond_param -> Var OpRelaMenor . Inteiro
+    (35) cond_param -> Var OpRelaMenor . Real
+    (36) cond_param -> Var OpRelaMenor . Var
+
+    Inteiro         shift and go to state 104
+    Real            shift and go to state 105
+    Var             shift and go to state 103
+
+
+state 65
+
+    (37) cond_param -> Var OpRelaMaior . Inteiro
+    (38) cond_param -> Var OpRelaMaior . Real
+    (39) cond_param -> Var OpRelaMaior . Var
+
+    Inteiro         shift and go to state 107
+    Real            shift and go to state 108
+    Var             shift and go to state 106
+
+
+state 66
+
+    (40) cond_param -> Var OpRelaMenorIgual . Inteiro
+    (41) cond_param -> Var OpRelaMenorIgual . Real
+    (42) cond_param -> Var OpRelaMenorIgual . Var
+
+    Inteiro         shift and go to state 110
+    Real            shift and go to state 111
+    Var             shift and go to state 109
+
+
+state 67
+
+    (43) cond_param -> Var OpRelaMaiorIgual . Inteiro
+    (44) cond_param -> Var OpRelaMaiorIgual . Real
+    (45) cond_param -> Var OpRelaMaiorIgual . Var
+
+    Inteiro         shift and go to state 113
+    Real            shift and go to state 114
+    Var             shift and go to state 112
+
+
+state 68
+
+    (46) cond_param -> Var OpRelaIgual . Inteiro
+    (47) cond_param -> Var OpRelaIgual . Real
+    (48) cond_param -> Var OpRelaIgual . Var
+
+    Inteiro         shift and go to state 116
+    Real            shift and go to state 117
+    Var             shift and go to state 115
+
+
+state 69
+
+    (49) cond_param -> Var OpRelaDiferente . Inteiro
+    (50) cond_param -> Var OpRelaDiferente . Real
+    (51) cond_param -> Var OpRelaDiferente . Var
+
+    Inteiro         shift and go to state 119
+    Real            shift and go to state 120
+    Var             shift and go to state 118
+
+
+state 70
+
+    (52) cond_param -> Var OpLogAnd . Inteiro
+    (53) cond_param -> Var OpLogAnd . Real
+    (54) cond_param -> Var OpLogAnd . Var
+
+    Inteiro         shift and go to state 122
+    Real            shift and go to state 123
+    Var             shift and go to state 121
+
+
+state 71
+
+    (55) cond_param -> Var OpLogOr . Inteiro
+    (56) cond_param -> Var OpLogOr . Real
+    (57) cond_param -> Var OpLogOr . Var
+
+    Inteiro         shift and go to state 125
+    Real            shift and go to state 126
+    Var             shift and go to state 124
+
+
+state 72
+
+    (77) param -> param Virgula param .
+    (77) param -> param . Virgula param
+
+  ! shift/reduce conflict for Virgula resolved as shift
+    FechaParenteses reduce using rule 77 (param -> param Virgula param .)
+    Virgula         shift and go to state 38
+
+  ! Virgula         [ reduce using rule 77 (param -> param Virgula param .) ]
+
+
+state 73
+
+    (66) expr -> expr OpMatSoma . expr
+    (63) expr -> . Inteiro
+    (64) expr -> . Real
+    (65) expr -> . Var
+    (66) expr -> . expr OpMatSoma expr
+    (67) expr -> . expr OpMatSub expr
+    (68) expr -> . expr OpMatMult expr
+    (69) expr -> . expr OpMatDiv expr
+    (70) expr -> . AbreParenteses expr FechaParenteses
+    (71) expr -> . Texto
+
+    Inteiro         shift and go to state 57
+    Real            shift and go to state 58
+    Var             shift and go to state 59
+    AbreParenteses  shift and go to state 55
+    Texto           shift and go to state 60
+
+    expr                           shift and go to state 127
+
+state 74
+
+    (67) expr -> expr OpMatSub . expr
+    (63) expr -> . Inteiro
+    (64) expr -> . Real
+    (65) expr -> . Var
+    (66) expr -> . expr OpMatSoma expr
+    (67) expr -> . expr OpMatSub expr
+    (68) expr -> . expr OpMatMult expr
+    (69) expr -> . expr OpMatDiv expr
+    (70) expr -> . AbreParenteses expr FechaParenteses
+    (71) expr -> . Texto
+
+    Inteiro         shift and go to state 57
+    Real            shift and go to state 58
+    Var             shift and go to state 59
+    AbreParenteses  shift and go to state 55
+    Texto           shift and go to state 60
+
+    expr                           shift and go to state 128
+
+state 75
+
+    (68) expr -> expr OpMatMult . expr
+    (63) expr -> . Inteiro
+    (64) expr -> . Real
+    (65) expr -> . Var
+    (66) expr -> . expr OpMatSoma expr
+    (67) expr -> . expr OpMatSub expr
+    (68) expr -> . expr OpMatMult expr
+    (69) expr -> . expr OpMatDiv expr
+    (70) expr -> . AbreParenteses expr FechaParenteses
+    (71) expr -> . Texto
+
+    Inteiro         shift and go to state 57
+    Real            shift and go to state 58
+    Var             shift and go to state 59
+    AbreParenteses  shift and go to state 55
+    Texto           shift and go to state 60
+
+    expr                           shift and go to state 129
+
+state 76
+
+    (69) expr -> expr OpMatDiv . expr
+    (63) expr -> . Inteiro
+    (64) expr -> . Real
+    (65) expr -> . Var
+    (66) expr -> . expr OpMatSoma expr
+    (67) expr -> . expr OpMatSub expr
+    (68) expr -> . expr OpMatMult expr
+    (69) expr -> . expr OpMatDiv expr
+    (70) expr -> . AbreParenteses expr FechaParenteses
+    (71) expr -> . Texto
+
+    Inteiro         shift and go to state 57
+    Real            shift and go to state 58
+    Var             shift and go to state 59
+    AbreParenteses  shift and go to state 55
+    Texto           shift and go to state 60
+
+    expr                           shift and go to state 130
+
+state 77
+
+    (70) expr -> AbreParenteses expr . FechaParenteses
+    (66) expr -> expr . OpMatSoma expr
+    (67) expr -> expr . OpMatSub expr
+    (68) expr -> expr . OpMatMult expr
+    (69) expr -> expr . OpMatDiv expr
+
+    FechaParenteses shift and go to state 131
+    OpMatSoma       shift and go to state 73
+    OpMatSub        shift and go to state 74
+    OpMatMult       shift and go to state 75
+    OpMatDiv        shift and go to state 76
+
+
+state 78
+
+    (63) expr -> Inteiro .
+    (73) param -> Inteiro .
+
+  ! reduce/reduce conflict for FechaParenteses resolved using rule 63 (expr -> Inteiro .)
+    FechaParenteses reduce using rule 63 (expr -> Inteiro .)
+    OpMatSoma       reduce using rule 63 (expr -> Inteiro .)
+    OpMatSub        reduce using rule 63 (expr -> Inteiro .)
+    OpMatMult       reduce using rule 63 (expr -> Inteiro .)
+    OpMatDiv        reduce using rule 63 (expr -> Inteiro .)
+    Virgula         reduce using rule 73 (param -> Inteiro .)
+
+  ! FechaParenteses [ reduce using rule 73 (param -> Inteiro .) ]
+
+
+state 79
+
+    (64) expr -> Real .
+    (74) param -> Real .
+
+  ! reduce/reduce conflict for FechaParenteses resolved using rule 64 (expr -> Real .)
+    FechaParenteses reduce using rule 64 (expr -> Real .)
+    OpMatSoma       reduce using rule 64 (expr -> Real .)
+    OpMatSub        reduce using rule 64 (expr -> Real .)
+    OpMatMult       reduce using rule 64 (expr -> Real .)
+    OpMatDiv        reduce using rule 64 (expr -> Real .)
+    Virgula         reduce using rule 74 (param -> Real .)
+
+  ! FechaParenteses [ reduce using rule 74 (param -> Real .) ]
+
+
+state 80
+
+    (65) expr -> Var .
+    (76) param -> Var .
+
+  ! reduce/reduce conflict for FechaParenteses resolved using rule 65 (expr -> Var .)
+    FechaParenteses reduce using rule 65 (expr -> Var .)
+    OpMatSoma       reduce using rule 65 (expr -> Var .)
+    OpMatSub        reduce using rule 65 (expr -> Var .)
+    OpMatMult       reduce using rule 65 (expr -> Var .)
+    OpMatDiv        reduce using rule 65 (expr -> Var .)
+    Virgula         reduce using rule 76 (param -> Var .)
+
+  ! FechaParenteses [ reduce using rule 76 (param -> Var .) ]
+
+
+state 81
+
+    (71) expr -> Texto .
+    (75) param -> Texto .
+
+  ! reduce/reduce conflict for FechaParenteses resolved using rule 71 (expr -> Texto .)
+    FechaParenteses reduce using rule 71 (expr -> Texto .)
+    OpMatSoma       reduce using rule 71 (expr -> Texto .)
+    OpMatSub        reduce using rule 71 (expr -> Texto .)
+    OpMatMult       reduce using rule 71 (expr -> Texto .)
+    OpMatDiv        reduce using rule 71 (expr -> Texto .)
+    Virgula         reduce using rule 75 (param -> Texto .)
+
+  ! FechaParenteses [ reduce using rule 75 (param -> Texto .) ]
+
+
+state 82
+
+    (78) entrada -> Input AbreParenteses . Texto FechaParenteses
+    (79) entrada -> Input AbreParenteses . FechaParenteses
+
+    Texto           shift and go to state 132
+    FechaParenteses shift and go to state 133
+
+
+state 83
+
+    (33) statement -> funcao AbreParenteses statements FechaParenteses .
+
+    Fim             reduce using rule 33 (statement -> funcao AbreParenteses statements FechaParenteses .)
+    While           reduce using rule 33 (statement -> funcao AbreParenteses statements FechaParenteses .)
+    Var             reduce using rule 33 (statement -> funcao AbreParenteses statements FechaParenteses .)
+    TipoVarString   reduce using rule 33 (statement -> funcao AbreParenteses statements FechaParenteses .)
+    TipoVarInt      reduce using rule 33 (statement -> funcao AbreParenteses statements FechaParenteses .)
+    TipoVarReal     reduce using rule 33 (statement -> funcao AbreParenteses statements FechaParenteses .)
+    TipoVarBool     reduce using rule 33 (statement -> funcao AbreParenteses statements FechaParenteses .)
+    If              reduce using rule 33 (statement -> funcao AbreParenteses statements FechaParenteses .)
+    Print           reduce using rule 33 (statement -> funcao AbreParenteses statements FechaParenteses .)
+    AbreParenteses  reduce using rule 33 (statement -> funcao AbreParenteses statements FechaParenteses .)
+    FechaParenteses reduce using rule 33 (statement -> funcao AbreParenteses statements FechaParenteses .)
+
+
+state 84
+
+    (18) statement -> tipoVar Var OpAtrib Var .
+    (65) expr -> Var .
+
+  ! reduce/reduce conflict for Fim resolved using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+  ! reduce/reduce conflict for While resolved using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+  ! reduce/reduce conflict for Var resolved using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+  ! reduce/reduce conflict for TipoVarString resolved using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+  ! reduce/reduce conflict for TipoVarInt resolved using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+  ! reduce/reduce conflict for TipoVarReal resolved using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+  ! reduce/reduce conflict for TipoVarBool resolved using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+  ! reduce/reduce conflict for If resolved using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+  ! reduce/reduce conflict for Print resolved using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+  ! reduce/reduce conflict for AbreParenteses resolved using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+  ! reduce/reduce conflict for FechaParenteses resolved using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+    Fim             reduce using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+    While           reduce using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+    Var             reduce using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+    TipoVarString   reduce using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+    TipoVarInt      reduce using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+    TipoVarReal     reduce using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+    TipoVarBool     reduce using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+    If              reduce using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+    Print           reduce using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+    AbreParenteses  reduce using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+    FechaParenteses reduce using rule 18 (statement -> tipoVar Var OpAtrib Var .)
+    OpMatSoma       reduce using rule 65 (expr -> Var .)
+    OpMatSub        reduce using rule 65 (expr -> Var .)
+    OpMatMult       reduce using rule 65 (expr -> Var .)
+    OpMatDiv        reduce using rule 65 (expr -> Var .)
+
+  ! Fim             [ reduce using rule 65 (expr -> Var .) ]
+  ! While           [ reduce using rule 65 (expr -> Var .) ]
+  ! Var             [ reduce using rule 65 (expr -> Var .) ]
+  ! TipoVarString   [ reduce using rule 65 (expr -> Var .) ]
+  ! TipoVarInt      [ reduce using rule 65 (expr -> Var .) ]
+  ! TipoVarReal     [ reduce using rule 65 (expr -> Var .) ]
+  ! TipoVarBool     [ reduce using rule 65 (expr -> Var .) ]
+  ! If              [ reduce using rule 65 (expr -> Var .) ]
+  ! Print           [ reduce using rule 65 (expr -> Var .) ]
+  ! AbreParenteses  [ reduce using rule 65 (expr -> Var .) ]
+  ! FechaParenteses [ reduce using rule 65 (expr -> Var .) ]
+
+
+state 85
+
+    (16) statement -> tipoVar Var OpAtrib expr .
+    (66) expr -> expr . OpMatSoma expr
+    (67) expr -> expr . OpMatSub expr
+    (68) expr -> expr . OpMatMult expr
+    (69) expr -> expr . OpMatDiv expr
+
+    Fim             reduce using rule 16 (statement -> tipoVar Var OpAtrib expr .)
+    While           reduce using rule 16 (statement -> tipoVar Var OpAtrib expr .)
+    Var             reduce using rule 16 (statement -> tipoVar Var OpAtrib expr .)
+    TipoVarString   reduce using rule 16 (statement -> tipoVar Var OpAtrib expr .)
+    TipoVarInt      reduce using rule 16 (statement -> tipoVar Var OpAtrib expr .)
+    TipoVarReal     reduce using rule 16 (statement -> tipoVar Var OpAtrib expr .)
+    TipoVarBool     reduce using rule 16 (statement -> tipoVar Var OpAtrib expr .)
+    If              reduce using rule 16 (statement -> tipoVar Var OpAtrib expr .)
+    Print           reduce using rule 16 (statement -> tipoVar Var OpAtrib expr .)
+    AbreParenteses  reduce using rule 16 (statement -> tipoVar Var OpAtrib expr .)
+    FechaParenteses reduce using rule 16 (statement -> tipoVar Var OpAtrib expr .)
+    OpMatSoma       shift and go to state 73
+    OpMatSub        shift and go to state 74
+    OpMatMult       shift and go to state 75
+    OpMatDiv        shift and go to state 76
+
+
+state 86
+
+    (22) statement -> tipoVar Var OpAtrib funcao .
+
+    Fim             reduce using rule 22 (statement -> tipoVar Var OpAtrib funcao .)
+    While           reduce using rule 22 (statement -> tipoVar Var OpAtrib funcao .)
+    Var             reduce using rule 22 (statement -> tipoVar Var OpAtrib funcao .)
+    TipoVarString   reduce using rule 22 (statement -> tipoVar Var OpAtrib funcao .)
+    TipoVarInt      reduce using rule 22 (statement -> tipoVar Var OpAtrib funcao .)
+    TipoVarReal     reduce using rule 22 (statement -> tipoVar Var OpAtrib funcao .)
+    TipoVarBool     reduce using rule 22 (statement -> tipoVar Var OpAtrib funcao .)
+    If              reduce using rule 22 (statement -> tipoVar Var OpAtrib funcao .)
+    Print           reduce using rule 22 (statement -> tipoVar Var OpAtrib funcao .)
+    AbreParenteses  reduce using rule 22 (statement -> tipoVar Var OpAtrib funcao .)
+    FechaParenteses reduce using rule 22 (statement -> tipoVar Var OpAtrib funcao .)
+
+
+state 87
+
+    (17) statement -> TipoVarString Var OpAtrib Texto .
+
+    Fim             reduce using rule 17 (statement -> TipoVarString Var OpAtrib Texto .)
+    While           reduce using rule 17 (statement -> TipoVarString Var OpAtrib Texto .)
+    Var             reduce using rule 17 (statement -> TipoVarString Var OpAtrib Texto .)
+    TipoVarString   reduce using rule 17 (statement -> TipoVarString Var OpAtrib Texto .)
+    TipoVarInt      reduce using rule 17 (statement -> TipoVarString Var OpAtrib Texto .)
+    TipoVarReal     reduce using rule 17 (statement -> TipoVarString Var OpAtrib Texto .)
+    TipoVarBool     reduce using rule 17 (statement -> TipoVarString Var OpAtrib Texto .)
+    If              reduce using rule 17 (statement -> TipoVarString Var OpAtrib Texto .)
+    Print           reduce using rule 17 (statement -> TipoVarString Var OpAtrib Texto .)
+    AbreParenteses  reduce using rule 17 (statement -> TipoVarString Var OpAtrib Texto .)
+    FechaParenteses reduce using rule 17 (statement -> TipoVarString Var OpAtrib Texto .)
+
+
+state 88
+
+    (23) statement -> TipoVarString Var OpAtrib entrada .
+
+    Fim             reduce using rule 23 (statement -> TipoVarString Var OpAtrib entrada .)
+    While           reduce using rule 23 (statement -> TipoVarString Var OpAtrib entrada .)
+    Var             reduce using rule 23 (statement -> TipoVarString Var OpAtrib entrada .)
+    TipoVarString   reduce using rule 23 (statement -> TipoVarString Var OpAtrib entrada .)
+    TipoVarInt      reduce using rule 23 (statement -> TipoVarString Var OpAtrib entrada .)
+    TipoVarReal     reduce using rule 23 (statement -> TipoVarString Var OpAtrib entrada .)
+    TipoVarBool     reduce using rule 23 (statement -> TipoVarString Var OpAtrib entrada .)
+    If              reduce using rule 23 (statement -> TipoVarString Var OpAtrib entrada .)
+    Print           reduce using rule 23 (statement -> TipoVarString Var OpAtrib entrada .)
+    AbreParenteses  reduce using rule 23 (statement -> TipoVarString Var OpAtrib entrada .)
+    FechaParenteses reduce using rule 23 (statement -> TipoVarString Var OpAtrib entrada .)
+
+
+state 89
+
+    (19) statement -> TipoVarInt Var OpAtrib Inteiro .
+
+    Fim             reduce using rule 19 (statement -> TipoVarInt Var OpAtrib Inteiro .)
+    While           reduce using rule 19 (statement -> TipoVarInt Var OpAtrib Inteiro .)
+    Var             reduce using rule 19 (statement -> TipoVarInt Var OpAtrib Inteiro .)
+    TipoVarString   reduce using rule 19 (statement -> TipoVarInt Var OpAtrib Inteiro .)
+    TipoVarInt      reduce using rule 19 (statement -> TipoVarInt Var OpAtrib Inteiro .)
+    TipoVarReal     reduce using rule 19 (statement -> TipoVarInt Var OpAtrib Inteiro .)
+    TipoVarBool     reduce using rule 19 (statement -> TipoVarInt Var OpAtrib Inteiro .)
+    If              reduce using rule 19 (statement -> TipoVarInt Var OpAtrib Inteiro .)
+    Print           reduce using rule 19 (statement -> TipoVarInt Var OpAtrib Inteiro .)
+    AbreParenteses  reduce using rule 19 (statement -> TipoVarInt Var OpAtrib Inteiro .)
+    FechaParenteses reduce using rule 19 (statement -> TipoVarInt Var OpAtrib Inteiro .)
+
+
+state 90
+
+    (24) statement -> TipoVarInt Var OpAtrib entrada .
+
+    Fim             reduce using rule 24 (statement -> TipoVarInt Var OpAtrib entrada .)
+    While           reduce using rule 24 (statement -> TipoVarInt Var OpAtrib entrada .)
+    Var             reduce using rule 24 (statement -> TipoVarInt Var OpAtrib entrada .)
+    TipoVarString   reduce using rule 24 (statement -> TipoVarInt Var OpAtrib entrada .)
+    TipoVarInt      reduce using rule 24 (statement -> TipoVarInt Var OpAtrib entrada .)
+    TipoVarReal     reduce using rule 24 (statement -> TipoVarInt Var OpAtrib entrada .)
+    TipoVarBool     reduce using rule 24 (statement -> TipoVarInt Var OpAtrib entrada .)
+    If              reduce using rule 24 (statement -> TipoVarInt Var OpAtrib entrada .)
+    Print           reduce using rule 24 (statement -> TipoVarInt Var OpAtrib entrada .)
+    AbreParenteses  reduce using rule 24 (statement -> TipoVarInt Var OpAtrib entrada .)
+    FechaParenteses reduce using rule 24 (statement -> TipoVarInt Var OpAtrib entrada .)
+
+
+state 91
+
+    (20) statement -> TipoVarReal Var OpAtrib Inteiro .
+
+    Fim             reduce using rule 20 (statement -> TipoVarReal Var OpAtrib Inteiro .)
+    While           reduce using rule 20 (statement -> TipoVarReal Var OpAtrib Inteiro .)
+    Var             reduce using rule 20 (statement -> TipoVarReal Var OpAtrib Inteiro .)
+    TipoVarString   reduce using rule 20 (statement -> TipoVarReal Var OpAtrib Inteiro .)
+    TipoVarInt      reduce using rule 20 (statement -> TipoVarReal Var OpAtrib Inteiro .)
+    TipoVarReal     reduce using rule 20 (statement -> TipoVarReal Var OpAtrib Inteiro .)
+    TipoVarBool     reduce using rule 20 (statement -> TipoVarReal Var OpAtrib Inteiro .)
+    If              reduce using rule 20 (statement -> TipoVarReal Var OpAtrib Inteiro .)
+    Print           reduce using rule 20 (statement -> TipoVarReal Var OpAtrib Inteiro .)
+    AbreParenteses  reduce using rule 20 (statement -> TipoVarReal Var OpAtrib Inteiro .)
+    FechaParenteses reduce using rule 20 (statement -> TipoVarReal Var OpAtrib Inteiro .)
+
+
+state 92
+
+    (21) statement -> TipoVarReal Var OpAtrib Real .
+
+    Fim             reduce using rule 21 (statement -> TipoVarReal Var OpAtrib Real .)
+    While           reduce using rule 21 (statement -> TipoVarReal Var OpAtrib Real .)
+    Var             reduce using rule 21 (statement -> TipoVarReal Var OpAtrib Real .)
+    TipoVarString   reduce using rule 21 (statement -> TipoVarReal Var OpAtrib Real .)
+    TipoVarInt      reduce using rule 21 (statement -> TipoVarReal Var OpAtrib Real .)
+    TipoVarReal     reduce using rule 21 (statement -> TipoVarReal Var OpAtrib Real .)
+    TipoVarBool     reduce using rule 21 (statement -> TipoVarReal Var OpAtrib Real .)
+    If              reduce using rule 21 (statement -> TipoVarReal Var OpAtrib Real .)
+    Print           reduce using rule 21 (statement -> TipoVarReal Var OpAtrib Real .)
+    AbreParenteses  reduce using rule 21 (statement -> TipoVarReal Var OpAtrib Real .)
+    FechaParenteses reduce using rule 21 (statement -> TipoVarReal Var OpAtrib Real .)
+
+
+state 93
+
+    (25) statement -> TipoVarReal Var OpAtrib entrada .
+
+    Fim             reduce using rule 25 (statement -> TipoVarReal Var OpAtrib entrada .)
+    While           reduce using rule 25 (statement -> TipoVarReal Var OpAtrib entrada .)
+    Var             reduce using rule 25 (statement -> TipoVarReal Var OpAtrib entrada .)
+    TipoVarString   reduce using rule 25 (statement -> TipoVarReal Var OpAtrib entrada .)
+    TipoVarInt      reduce using rule 25 (statement -> TipoVarReal Var OpAtrib entrada .)
+    TipoVarReal     reduce using rule 25 (statement -> TipoVarReal Var OpAtrib entrada .)
+    TipoVarBool     reduce using rule 25 (statement -> TipoVarReal Var OpAtrib entrada .)
+    If              reduce using rule 25 (statement -> TipoVarReal Var OpAtrib entrada .)
+    Print           reduce using rule 25 (statement -> TipoVarReal Var OpAtrib entrada .)
+    AbreParenteses  reduce using rule 25 (statement -> TipoVarReal Var OpAtrib entrada .)
+    FechaParenteses reduce using rule 25 (statement -> TipoVarReal Var OpAtrib entrada .)
+
+
+state 94
+
+    (26) statement -> TipoVarBool Var OpAtrib entrada .
+
+    Fim             reduce using rule 26 (statement -> TipoVarBool Var OpAtrib entrada .)
+    While           reduce using rule 26 (statement -> TipoVarBool Var OpAtrib entrada .)
+    Var             reduce using rule 26 (statement -> TipoVarBool Var OpAtrib entrada .)
+    TipoVarString   reduce using rule 26 (statement -> TipoVarBool Var OpAtrib entrada .)
+    TipoVarInt      reduce using rule 26 (statement -> TipoVarBool Var OpAtrib entrada .)
+    TipoVarReal     reduce using rule 26 (statement -> TipoVarBool Var OpAtrib entrada .)
+    TipoVarBool     reduce using rule 26 (statement -> TipoVarBool Var OpAtrib entrada .)
+    If              reduce using rule 26 (statement -> TipoVarBool Var OpAtrib entrada .)
+    Print           reduce using rule 26 (statement -> TipoVarBool Var OpAtrib entrada .)
+    AbreParenteses  reduce using rule 26 (statement -> TipoVarBool Var OpAtrib entrada .)
+    FechaParenteses reduce using rule 26 (statement -> TipoVarBool Var OpAtrib entrada .)
+
+
+state 95
+
+    (27) statement -> TipoVarBool Var OpAtrib true_false .
+
+    Fim             reduce using rule 27 (statement -> TipoVarBool Var OpAtrib true_false .)
+    While           reduce using rule 27 (statement -> TipoVarBool Var OpAtrib true_false .)
+    Var             reduce using rule 27 (statement -> TipoVarBool Var OpAtrib true_false .)
+    TipoVarString   reduce using rule 27 (statement -> TipoVarBool Var OpAtrib true_false .)
+    TipoVarInt      reduce using rule 27 (statement -> TipoVarBool Var OpAtrib true_false .)
+    TipoVarReal     reduce using rule 27 (statement -> TipoVarBool Var OpAtrib true_false .)
+    TipoVarBool     reduce using rule 27 (statement -> TipoVarBool Var OpAtrib true_false .)
+    If              reduce using rule 27 (statement -> TipoVarBool Var OpAtrib true_false .)
+    Print           reduce using rule 27 (statement -> TipoVarBool Var OpAtrib true_false .)
+    AbreParenteses  reduce using rule 27 (statement -> TipoVarBool Var OpAtrib true_false .)
+    FechaParenteses reduce using rule 27 (statement -> TipoVarBool Var OpAtrib true_false .)
+
+
+state 96
+
+    (59) true_false -> BoolTrue .
+
+    Fim             reduce using rule 59 (true_false -> BoolTrue .)
+    While           reduce using rule 59 (true_false -> BoolTrue .)
+    Var             reduce using rule 59 (true_false -> BoolTrue .)
+    TipoVarString   reduce using rule 59 (true_false -> BoolTrue .)
+    TipoVarInt      reduce using rule 59 (true_false -> BoolTrue .)
+    TipoVarReal     reduce using rule 59 (true_false -> BoolTrue .)
+    TipoVarBool     reduce using rule 59 (true_false -> BoolTrue .)
+    If              reduce using rule 59 (true_false -> BoolTrue .)
+    Print           reduce using rule 59 (true_false -> BoolTrue .)
+    AbreParenteses  reduce using rule 59 (true_false -> BoolTrue .)
+    FechaParenteses reduce using rule 59 (true_false -> BoolTrue .)
+
+
+state 97
+
+    (60) true_false -> BoolFalse .
+
+    Fim             reduce using rule 60 (true_false -> BoolFalse .)
+    While           reduce using rule 60 (true_false -> BoolFalse .)
+    Var             reduce using rule 60 (true_false -> BoolFalse .)
+    TipoVarString   reduce using rule 60 (true_false -> BoolFalse .)
+    TipoVarInt      reduce using rule 60 (true_false -> BoolFalse .)
+    TipoVarReal     reduce using rule 60 (true_false -> BoolFalse .)
+    TipoVarBool     reduce using rule 60 (true_false -> BoolFalse .)
+    If              reduce using rule 60 (true_false -> BoolFalse .)
+    Print           reduce using rule 60 (true_false -> BoolFalse .)
+    AbreParenteses  reduce using rule 60 (true_false -> BoolFalse .)
+    FechaParenteses reduce using rule 60 (true_false -> BoolFalse .)
+
+
+state 98
+
+    (28) statement -> If AbreParenteses cond_param FechaParenteses . AbreParenteses statements FechaParenteses
+    (29) statement -> If AbreParenteses cond_param FechaParenteses . AbreParenteses statements FechaParenteses senaose
+    (30) statement -> If AbreParenteses cond_param FechaParenteses . AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses
+    (31) statement -> If AbreParenteses cond_param FechaParenteses . AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses
+
+    AbreParenteses  shift and go to state 134
+
+
+state 99
+
+    (58) statement -> Print AbreParenteses expr FechaParenteses .
+
+    Fim             reduce using rule 58 (statement -> Print AbreParenteses expr FechaParenteses .)
+    While           reduce using rule 58 (statement -> Print AbreParenteses expr FechaParenteses .)
+    Var             reduce using rule 58 (statement -> Print AbreParenteses expr FechaParenteses .)
+    TipoVarString   reduce using rule 58 (statement -> Print AbreParenteses expr FechaParenteses .)
+    TipoVarInt      reduce using rule 58 (statement -> Print AbreParenteses expr FechaParenteses .)
+    TipoVarReal     reduce using rule 58 (statement -> Print AbreParenteses expr FechaParenteses .)
+    TipoVarBool     reduce using rule 58 (statement -> Print AbreParenteses expr FechaParenteses .)
+    If              reduce using rule 58 (statement -> Print AbreParenteses expr FechaParenteses .)
+    Print           reduce using rule 58 (statement -> Print AbreParenteses expr FechaParenteses .)
+    AbreParenteses  reduce using rule 58 (statement -> Print AbreParenteses expr FechaParenteses .)
+    FechaParenteses reduce using rule 58 (statement -> Print AbreParenteses expr FechaParenteses .)
+
+
+state 100
+
+    (4) statement -> While AbreParenteses cond_param FechaParenteses AbreParenteses . statements FechaParenteses
+    (2) statements -> . statements statement
+    (3) statements -> . statement
+    (4) statement -> . While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (9) statement -> . Var OpAtrib expr
+    (10) statement -> . Var OpAtrib Texto
+    (11) statement -> . Var OpAtrib Var
+    (12) statement -> . Var OpAtrib Inteiro
+    (13) statement -> . Var OpAtrib Real
+    (14) statement -> . Var OpAtrib funcao
+    (15) statement -> . Var OpAtrib entrada
+    (16) statement -> . tipoVar Var OpAtrib expr
+    (17) statement -> . TipoVarString Var OpAtrib Texto
+    (18) statement -> . tipoVar Var OpAtrib Var
+    (19) statement -> . TipoVarInt Var OpAtrib Inteiro
+    (20) statement -> . TipoVarReal Var OpAtrib Inteiro
+    (21) statement -> . TipoVarReal Var OpAtrib Real
+    (22) statement -> . tipoVar Var OpAtrib funcao
+    (23) statement -> . TipoVarString Var OpAtrib entrada
+    (24) statement -> . TipoVarInt Var OpAtrib entrada
+    (25) statement -> . TipoVarReal Var OpAtrib entrada
+    (26) statement -> . TipoVarBool Var OpAtrib entrada
+    (27) statement -> . TipoVarBool Var OpAtrib true_false
+    (28) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (29) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose
+    (30) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses
+    (31) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses
+    (32) statement -> . funcao
+    (33) statement -> . funcao AbreParenteses statements FechaParenteses
+    (58) statement -> . Print AbreParenteses expr FechaParenteses
+    (5) tipoVar -> . TipoVarInt
+    (6) tipoVar -> . TipoVarReal
+    (7) tipoVar -> . TipoVarString
+    (8) tipoVar -> . TipoVarBool
+    (80) funcao -> . AbreParenteses param_vazio FechaParenteses
+    (81) funcao -> . AbreParenteses param FechaParenteses
+
+    While           shift and go to state 5
+    Var             shift and go to state 7
+    TipoVarString   shift and go to state 10
+    TipoVarInt      shift and go to state 11
+    TipoVarReal     shift and go to state 12
+    TipoVarBool     shift and go to state 13
+    If              shift and go to state 14
+    Print           shift and go to state 15
+    AbreParenteses  shift and go to state 6
+
+    statements                     shift and go to state 135
+    statement                      shift and go to state 4
+    funcao                         shift and go to state 8
+    tipoVar                        shift and go to state 9
+
+state 101
+
+    (61) cond_param -> cond_param OpLogAnd cond_param .
+    (61) cond_param -> cond_param . OpLogAnd cond_param
+    (62) cond_param -> cond_param . OpLogOr cond_param
+
+  ! shift/reduce conflict for OpLogAnd resolved as shift
+  ! shift/reduce conflict for OpLogOr resolved as shift
+    FechaParenteses reduce using rule 61 (cond_param -> cond_param OpLogAnd cond_param .)
+    OpLogAnd        shift and go to state 62
+    OpLogOr         shift and go to state 63
+
+  ! OpLogAnd        [ reduce using rule 61 (cond_param -> cond_param OpLogAnd cond_param .) ]
+  ! OpLogOr         [ reduce using rule 61 (cond_param -> cond_param OpLogAnd cond_param .) ]
+
+
+state 102
+
+    (62) cond_param -> cond_param OpLogOr cond_param .
+    (61) cond_param -> cond_param . OpLogAnd cond_param
+    (62) cond_param -> cond_param . OpLogOr cond_param
+
+  ! shift/reduce conflict for OpLogAnd resolved as shift
+  ! shift/reduce conflict for OpLogOr resolved as shift
+    FechaParenteses reduce using rule 62 (cond_param -> cond_param OpLogOr cond_param .)
+    OpLogAnd        shift and go to state 62
+    OpLogOr         shift and go to state 63
+
+  ! OpLogAnd        [ reduce using rule 62 (cond_param -> cond_param OpLogOr cond_param .) ]
+  ! OpLogOr         [ reduce using rule 62 (cond_param -> cond_param OpLogOr cond_param .) ]
+
+
+state 103
+
+    (36) cond_param -> Var OpRelaMenor Var .
+
+    FechaParenteses reduce using rule 36 (cond_param -> Var OpRelaMenor Var .)
+    OpLogAnd        reduce using rule 36 (cond_param -> Var OpRelaMenor Var .)
+    OpLogOr         reduce using rule 36 (cond_param -> Var OpRelaMenor Var .)
+
+
+state 104
+
+    (34) cond_param -> Var OpRelaMenor Inteiro .
+
+    FechaParenteses reduce using rule 34 (cond_param -> Var OpRelaMenor Inteiro .)
+    OpLogAnd        reduce using rule 34 (cond_param -> Var OpRelaMenor Inteiro .)
+    OpLogOr         reduce using rule 34 (cond_param -> Var OpRelaMenor Inteiro .)
+
+
+state 105
+
+    (35) cond_param -> Var OpRelaMenor Real .
+
+    FechaParenteses reduce using rule 35 (cond_param -> Var OpRelaMenor Real .)
+    OpLogAnd        reduce using rule 35 (cond_param -> Var OpRelaMenor Real .)
+    OpLogOr         reduce using rule 35 (cond_param -> Var OpRelaMenor Real .)
+
+
+state 106
+
+    (39) cond_param -> Var OpRelaMaior Var .
+
+    FechaParenteses reduce using rule 39 (cond_param -> Var OpRelaMaior Var .)
+    OpLogAnd        reduce using rule 39 (cond_param -> Var OpRelaMaior Var .)
+    OpLogOr         reduce using rule 39 (cond_param -> Var OpRelaMaior Var .)
+
+
+state 107
+
+    (37) cond_param -> Var OpRelaMaior Inteiro .
+
+    FechaParenteses reduce using rule 37 (cond_param -> Var OpRelaMaior Inteiro .)
+    OpLogAnd        reduce using rule 37 (cond_param -> Var OpRelaMaior Inteiro .)
+    OpLogOr         reduce using rule 37 (cond_param -> Var OpRelaMaior Inteiro .)
+
+
+state 108
+
+    (38) cond_param -> Var OpRelaMaior Real .
+
+    FechaParenteses reduce using rule 38 (cond_param -> Var OpRelaMaior Real .)
+    OpLogAnd        reduce using rule 38 (cond_param -> Var OpRelaMaior Real .)
+    OpLogOr         reduce using rule 38 (cond_param -> Var OpRelaMaior Real .)
+
+
+state 109
+
+    (42) cond_param -> Var OpRelaMenorIgual Var .
+
+    FechaParenteses reduce using rule 42 (cond_param -> Var OpRelaMenorIgual Var .)
+    OpLogAnd        reduce using rule 42 (cond_param -> Var OpRelaMenorIgual Var .)
+    OpLogOr         reduce using rule 42 (cond_param -> Var OpRelaMenorIgual Var .)
+
+
+state 110
+
+    (40) cond_param -> Var OpRelaMenorIgual Inteiro .
+
+    FechaParenteses reduce using rule 40 (cond_param -> Var OpRelaMenorIgual Inteiro .)
+    OpLogAnd        reduce using rule 40 (cond_param -> Var OpRelaMenorIgual Inteiro .)
+    OpLogOr         reduce using rule 40 (cond_param -> Var OpRelaMenorIgual Inteiro .)
+
+
+state 111
+
+    (41) cond_param -> Var OpRelaMenorIgual Real .
+
+    FechaParenteses reduce using rule 41 (cond_param -> Var OpRelaMenorIgual Real .)
+    OpLogAnd        reduce using rule 41 (cond_param -> Var OpRelaMenorIgual Real .)
+    OpLogOr         reduce using rule 41 (cond_param -> Var OpRelaMenorIgual Real .)
+
+
+state 112
+
+    (45) cond_param -> Var OpRelaMaiorIgual Var .
+
+    FechaParenteses reduce using rule 45 (cond_param -> Var OpRelaMaiorIgual Var .)
+    OpLogAnd        reduce using rule 45 (cond_param -> Var OpRelaMaiorIgual Var .)
+    OpLogOr         reduce using rule 45 (cond_param -> Var OpRelaMaiorIgual Var .)
+
+
+state 113
+
+    (43) cond_param -> Var OpRelaMaiorIgual Inteiro .
+
+    FechaParenteses reduce using rule 43 (cond_param -> Var OpRelaMaiorIgual Inteiro .)
+    OpLogAnd        reduce using rule 43 (cond_param -> Var OpRelaMaiorIgual Inteiro .)
+    OpLogOr         reduce using rule 43 (cond_param -> Var OpRelaMaiorIgual Inteiro .)
+
+
+state 114
+
+    (44) cond_param -> Var OpRelaMaiorIgual Real .
+
+    FechaParenteses reduce using rule 44 (cond_param -> Var OpRelaMaiorIgual Real .)
+    OpLogAnd        reduce using rule 44 (cond_param -> Var OpRelaMaiorIgual Real .)
+    OpLogOr         reduce using rule 44 (cond_param -> Var OpRelaMaiorIgual Real .)
+
+
+state 115
+
+    (48) cond_param -> Var OpRelaIgual Var .
+
+    FechaParenteses reduce using rule 48 (cond_param -> Var OpRelaIgual Var .)
+    OpLogAnd        reduce using rule 48 (cond_param -> Var OpRelaIgual Var .)
+    OpLogOr         reduce using rule 48 (cond_param -> Var OpRelaIgual Var .)
+
+
+state 116
+
+    (46) cond_param -> Var OpRelaIgual Inteiro .
+
+    FechaParenteses reduce using rule 46 (cond_param -> Var OpRelaIgual Inteiro .)
+    OpLogAnd        reduce using rule 46 (cond_param -> Var OpRelaIgual Inteiro .)
+    OpLogOr         reduce using rule 46 (cond_param -> Var OpRelaIgual Inteiro .)
+
+
+state 117
+
+    (47) cond_param -> Var OpRelaIgual Real .
+
+    FechaParenteses reduce using rule 47 (cond_param -> Var OpRelaIgual Real .)
+    OpLogAnd        reduce using rule 47 (cond_param -> Var OpRelaIgual Real .)
+    OpLogOr         reduce using rule 47 (cond_param -> Var OpRelaIgual Real .)
+
+
+state 118
+
+    (51) cond_param -> Var OpRelaDiferente Var .
+
+    FechaParenteses reduce using rule 51 (cond_param -> Var OpRelaDiferente Var .)
+    OpLogAnd        reduce using rule 51 (cond_param -> Var OpRelaDiferente Var .)
+    OpLogOr         reduce using rule 51 (cond_param -> Var OpRelaDiferente Var .)
+
+
+state 119
+
+    (49) cond_param -> Var OpRelaDiferente Inteiro .
+
+    FechaParenteses reduce using rule 49 (cond_param -> Var OpRelaDiferente Inteiro .)
+    OpLogAnd        reduce using rule 49 (cond_param -> Var OpRelaDiferente Inteiro .)
+    OpLogOr         reduce using rule 49 (cond_param -> Var OpRelaDiferente Inteiro .)
+
+
+state 120
+
+    (50) cond_param -> Var OpRelaDiferente Real .
+
+    FechaParenteses reduce using rule 50 (cond_param -> Var OpRelaDiferente Real .)
+    OpLogAnd        reduce using rule 50 (cond_param -> Var OpRelaDiferente Real .)
+    OpLogOr         reduce using rule 50 (cond_param -> Var OpRelaDiferente Real .)
+
+
+state 121
+
+    (54) cond_param -> Var OpLogAnd Var .
+
+    FechaParenteses reduce using rule 54 (cond_param -> Var OpLogAnd Var .)
+    OpLogAnd        reduce using rule 54 (cond_param -> Var OpLogAnd Var .)
+    OpLogOr         reduce using rule 54 (cond_param -> Var OpLogAnd Var .)
+
+
+state 122
+
+    (52) cond_param -> Var OpLogAnd Inteiro .
+
+    FechaParenteses reduce using rule 52 (cond_param -> Var OpLogAnd Inteiro .)
+    OpLogAnd        reduce using rule 52 (cond_param -> Var OpLogAnd Inteiro .)
+    OpLogOr         reduce using rule 52 (cond_param -> Var OpLogAnd Inteiro .)
+
+
+state 123
+
+    (53) cond_param -> Var OpLogAnd Real .
+
+    FechaParenteses reduce using rule 53 (cond_param -> Var OpLogAnd Real .)
+    OpLogAnd        reduce using rule 53 (cond_param -> Var OpLogAnd Real .)
+    OpLogOr         reduce using rule 53 (cond_param -> Var OpLogAnd Real .)
+
+
+state 124
+
+    (57) cond_param -> Var OpLogOr Var .
+
+    FechaParenteses reduce using rule 57 (cond_param -> Var OpLogOr Var .)
+    OpLogAnd        reduce using rule 57 (cond_param -> Var OpLogOr Var .)
+    OpLogOr         reduce using rule 57 (cond_param -> Var OpLogOr Var .)
+
+
+state 125
+
+    (55) cond_param -> Var OpLogOr Inteiro .
+
+    FechaParenteses reduce using rule 55 (cond_param -> Var OpLogOr Inteiro .)
+    OpLogAnd        reduce using rule 55 (cond_param -> Var OpLogOr Inteiro .)
+    OpLogOr         reduce using rule 55 (cond_param -> Var OpLogOr Inteiro .)
+
+
+state 126
+
+    (56) cond_param -> Var OpLogOr Real .
+
+    FechaParenteses reduce using rule 56 (cond_param -> Var OpLogOr Real .)
+    OpLogAnd        reduce using rule 56 (cond_param -> Var OpLogOr Real .)
+    OpLogOr         reduce using rule 56 (cond_param -> Var OpLogOr Real .)
+
+
+state 127
+
+    (66) expr -> expr OpMatSoma expr .
+    (66) expr -> expr . OpMatSoma expr
+    (67) expr -> expr . OpMatSub expr
+    (68) expr -> expr . OpMatMult expr
+    (69) expr -> expr . OpMatDiv expr
+
+  ! shift/reduce conflict for OpMatSoma resolved as shift
+  ! shift/reduce conflict for OpMatSub resolved as shift
+  ! shift/reduce conflict for OpMatMult resolved as shift
+  ! shift/reduce conflict for OpMatDiv resolved as shift
+    Fim             reduce using rule 66 (expr -> expr OpMatSoma expr .)
+    While           reduce using rule 66 (expr -> expr OpMatSoma expr .)
+    Var             reduce using rule 66 (expr -> expr OpMatSoma expr .)
+    TipoVarString   reduce using rule 66 (expr -> expr OpMatSoma expr .)
+    TipoVarInt      reduce using rule 66 (expr -> expr OpMatSoma expr .)
+    TipoVarReal     reduce using rule 66 (expr -> expr OpMatSoma expr .)
+    TipoVarBool     reduce using rule 66 (expr -> expr OpMatSoma expr .)
+    If              reduce using rule 66 (expr -> expr OpMatSoma expr .)
+    Print           reduce using rule 66 (expr -> expr OpMatSoma expr .)
+    AbreParenteses  reduce using rule 66 (expr -> expr OpMatSoma expr .)
+    FechaParenteses reduce using rule 66 (expr -> expr OpMatSoma expr .)
+    OpMatSoma       shift and go to state 73
+    OpMatSub        shift and go to state 74
+    OpMatMult       shift and go to state 75
+    OpMatDiv        shift and go to state 76
+
+  ! OpMatSoma       [ reduce using rule 66 (expr -> expr OpMatSoma expr .) ]
+  ! OpMatSub        [ reduce using rule 66 (expr -> expr OpMatSoma expr .) ]
+  ! OpMatMult       [ reduce using rule 66 (expr -> expr OpMatSoma expr .) ]
+  ! OpMatDiv        [ reduce using rule 66 (expr -> expr OpMatSoma expr .) ]
+
+
+state 128
+
+    (67) expr -> expr OpMatSub expr .
+    (66) expr -> expr . OpMatSoma expr
+    (67) expr -> expr . OpMatSub expr
+    (68) expr -> expr . OpMatMult expr
+    (69) expr -> expr . OpMatDiv expr
+
+  ! shift/reduce conflict for OpMatSoma resolved as shift
+  ! shift/reduce conflict for OpMatSub resolved as shift
+  ! shift/reduce conflict for OpMatMult resolved as shift
+  ! shift/reduce conflict for OpMatDiv resolved as shift
+    Fim             reduce using rule 67 (expr -> expr OpMatSub expr .)
+    While           reduce using rule 67 (expr -> expr OpMatSub expr .)
+    Var             reduce using rule 67 (expr -> expr OpMatSub expr .)
+    TipoVarString   reduce using rule 67 (expr -> expr OpMatSub expr .)
+    TipoVarInt      reduce using rule 67 (expr -> expr OpMatSub expr .)
+    TipoVarReal     reduce using rule 67 (expr -> expr OpMatSub expr .)
+    TipoVarBool     reduce using rule 67 (expr -> expr OpMatSub expr .)
+    If              reduce using rule 67 (expr -> expr OpMatSub expr .)
+    Print           reduce using rule 67 (expr -> expr OpMatSub expr .)
+    AbreParenteses  reduce using rule 67 (expr -> expr OpMatSub expr .)
+    FechaParenteses reduce using rule 67 (expr -> expr OpMatSub expr .)
+    OpMatSoma       shift and go to state 73
+    OpMatSub        shift and go to state 74
+    OpMatMult       shift and go to state 75
+    OpMatDiv        shift and go to state 76
+
+  ! OpMatSoma       [ reduce using rule 67 (expr -> expr OpMatSub expr .) ]
+  ! OpMatSub        [ reduce using rule 67 (expr -> expr OpMatSub expr .) ]
+  ! OpMatMult       [ reduce using rule 67 (expr -> expr OpMatSub expr .) ]
+  ! OpMatDiv        [ reduce using rule 67 (expr -> expr OpMatSub expr .) ]
+
+
+state 129
+
+    (68) expr -> expr OpMatMult expr .
+    (66) expr -> expr . OpMatSoma expr
+    (67) expr -> expr . OpMatSub expr
+    (68) expr -> expr . OpMatMult expr
+    (69) expr -> expr . OpMatDiv expr
+
+  ! shift/reduce conflict for OpMatSoma resolved as shift
+  ! shift/reduce conflict for OpMatSub resolved as shift
+  ! shift/reduce conflict for OpMatMult resolved as shift
+  ! shift/reduce conflict for OpMatDiv resolved as shift
+    Fim             reduce using rule 68 (expr -> expr OpMatMult expr .)
+    While           reduce using rule 68 (expr -> expr OpMatMult expr .)
+    Var             reduce using rule 68 (expr -> expr OpMatMult expr .)
+    TipoVarString   reduce using rule 68 (expr -> expr OpMatMult expr .)
+    TipoVarInt      reduce using rule 68 (expr -> expr OpMatMult expr .)
+    TipoVarReal     reduce using rule 68 (expr -> expr OpMatMult expr .)
+    TipoVarBool     reduce using rule 68 (expr -> expr OpMatMult expr .)
+    If              reduce using rule 68 (expr -> expr OpMatMult expr .)
+    Print           reduce using rule 68 (expr -> expr OpMatMult expr .)
+    AbreParenteses  reduce using rule 68 (expr -> expr OpMatMult expr .)
+    FechaParenteses reduce using rule 68 (expr -> expr OpMatMult expr .)
+    OpMatSoma       shift and go to state 73
+    OpMatSub        shift and go to state 74
+    OpMatMult       shift and go to state 75
+    OpMatDiv        shift and go to state 76
+
+  ! OpMatSoma       [ reduce using rule 68 (expr -> expr OpMatMult expr .) ]
+  ! OpMatSub        [ reduce using rule 68 (expr -> expr OpMatMult expr .) ]
+  ! OpMatMult       [ reduce using rule 68 (expr -> expr OpMatMult expr .) ]
+  ! OpMatDiv        [ reduce using rule 68 (expr -> expr OpMatMult expr .) ]
+
+
+state 130
+
+    (69) expr -> expr OpMatDiv expr .
+    (66) expr -> expr . OpMatSoma expr
+    (67) expr -> expr . OpMatSub expr
+    (68) expr -> expr . OpMatMult expr
+    (69) expr -> expr . OpMatDiv expr
+
+  ! shift/reduce conflict for OpMatSoma resolved as shift
+  ! shift/reduce conflict for OpMatSub resolved as shift
+  ! shift/reduce conflict for OpMatMult resolved as shift
+  ! shift/reduce conflict for OpMatDiv resolved as shift
+    Fim             reduce using rule 69 (expr -> expr OpMatDiv expr .)
+    While           reduce using rule 69 (expr -> expr OpMatDiv expr .)
+    Var             reduce using rule 69 (expr -> expr OpMatDiv expr .)
+    TipoVarString   reduce using rule 69 (expr -> expr OpMatDiv expr .)
+    TipoVarInt      reduce using rule 69 (expr -> expr OpMatDiv expr .)
+    TipoVarReal     reduce using rule 69 (expr -> expr OpMatDiv expr .)
+    TipoVarBool     reduce using rule 69 (expr -> expr OpMatDiv expr .)
+    If              reduce using rule 69 (expr -> expr OpMatDiv expr .)
+    Print           reduce using rule 69 (expr -> expr OpMatDiv expr .)
+    AbreParenteses  reduce using rule 69 (expr -> expr OpMatDiv expr .)
+    FechaParenteses reduce using rule 69 (expr -> expr OpMatDiv expr .)
+    OpMatSoma       shift and go to state 73
+    OpMatSub        shift and go to state 74
+    OpMatMult       shift and go to state 75
+    OpMatDiv        shift and go to state 76
+
+  ! OpMatSoma       [ reduce using rule 69 (expr -> expr OpMatDiv expr .) ]
+  ! OpMatSub        [ reduce using rule 69 (expr -> expr OpMatDiv expr .) ]
+  ! OpMatMult       [ reduce using rule 69 (expr -> expr OpMatDiv expr .) ]
+  ! OpMatDiv        [ reduce using rule 69 (expr -> expr OpMatDiv expr .) ]
+
+
+state 131
+
+    (70) expr -> AbreParenteses expr FechaParenteses .
+
+    OpMatSoma       reduce using rule 70 (expr -> AbreParenteses expr FechaParenteses .)
+    OpMatSub        reduce using rule 70 (expr -> AbreParenteses expr FechaParenteses .)
+    OpMatMult       reduce using rule 70 (expr -> AbreParenteses expr FechaParenteses .)
+    OpMatDiv        reduce using rule 70 (expr -> AbreParenteses expr FechaParenteses .)
+    Fim             reduce using rule 70 (expr -> AbreParenteses expr FechaParenteses .)
+    While           reduce using rule 70 (expr -> AbreParenteses expr FechaParenteses .)
+    Var             reduce using rule 70 (expr -> AbreParenteses expr FechaParenteses .)
+    TipoVarString   reduce using rule 70 (expr -> AbreParenteses expr FechaParenteses .)
+    TipoVarInt      reduce using rule 70 (expr -> AbreParenteses expr FechaParenteses .)
+    TipoVarReal     reduce using rule 70 (expr -> AbreParenteses expr FechaParenteses .)
+    TipoVarBool     reduce using rule 70 (expr -> AbreParenteses expr FechaParenteses .)
+    If              reduce using rule 70 (expr -> AbreParenteses expr FechaParenteses .)
+    Print           reduce using rule 70 (expr -> AbreParenteses expr FechaParenteses .)
+    AbreParenteses  reduce using rule 70 (expr -> AbreParenteses expr FechaParenteses .)
+    FechaParenteses reduce using rule 70 (expr -> AbreParenteses expr FechaParenteses .)
+
+
+state 132
+
+    (78) entrada -> Input AbreParenteses Texto . FechaParenteses
+
+    FechaParenteses shift and go to state 136
+
+
+state 133
+
+    (79) entrada -> Input AbreParenteses FechaParenteses .
+
+    Fim             reduce using rule 79 (entrada -> Input AbreParenteses FechaParenteses .)
+    While           reduce using rule 79 (entrada -> Input AbreParenteses FechaParenteses .)
+    Var             reduce using rule 79 (entrada -> Input AbreParenteses FechaParenteses .)
+    TipoVarString   reduce using rule 79 (entrada -> Input AbreParenteses FechaParenteses .)
+    TipoVarInt      reduce using rule 79 (entrada -> Input AbreParenteses FechaParenteses .)
+    TipoVarReal     reduce using rule 79 (entrada -> Input AbreParenteses FechaParenteses .)
+    TipoVarBool     reduce using rule 79 (entrada -> Input AbreParenteses FechaParenteses .)
+    If              reduce using rule 79 (entrada -> Input AbreParenteses FechaParenteses .)
+    Print           reduce using rule 79 (entrada -> Input AbreParenteses FechaParenteses .)
+    AbreParenteses  reduce using rule 79 (entrada -> Input AbreParenteses FechaParenteses .)
+    FechaParenteses reduce using rule 79 (entrada -> Input AbreParenteses FechaParenteses .)
+
+
+state 134
+
+    (28) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses . statements FechaParenteses
+    (29) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses . statements FechaParenteses senaose
+    (30) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses . statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses
+    (31) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses . statements FechaParenteses Else AbreParenteses statements FechaParenteses
+    (2) statements -> . statements statement
+    (3) statements -> . statement
+    (4) statement -> . While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (9) statement -> . Var OpAtrib expr
+    (10) statement -> . Var OpAtrib Texto
+    (11) statement -> . Var OpAtrib Var
+    (12) statement -> . Var OpAtrib Inteiro
+    (13) statement -> . Var OpAtrib Real
+    (14) statement -> . Var OpAtrib funcao
+    (15) statement -> . Var OpAtrib entrada
+    (16) statement -> . tipoVar Var OpAtrib expr
+    (17) statement -> . TipoVarString Var OpAtrib Texto
+    (18) statement -> . tipoVar Var OpAtrib Var
+    (19) statement -> . TipoVarInt Var OpAtrib Inteiro
+    (20) statement -> . TipoVarReal Var OpAtrib Inteiro
+    (21) statement -> . TipoVarReal Var OpAtrib Real
+    (22) statement -> . tipoVar Var OpAtrib funcao
+    (23) statement -> . TipoVarString Var OpAtrib entrada
+    (24) statement -> . TipoVarInt Var OpAtrib entrada
+    (25) statement -> . TipoVarReal Var OpAtrib entrada
+    (26) statement -> . TipoVarBool Var OpAtrib entrada
+    (27) statement -> . TipoVarBool Var OpAtrib true_false
+    (28) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (29) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose
+    (30) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses
+    (31) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses
+    (32) statement -> . funcao
+    (33) statement -> . funcao AbreParenteses statements FechaParenteses
+    (58) statement -> . Print AbreParenteses expr FechaParenteses
+    (5) tipoVar -> . TipoVarInt
+    (6) tipoVar -> . TipoVarReal
+    (7) tipoVar -> . TipoVarString
+    (8) tipoVar -> . TipoVarBool
+    (80) funcao -> . AbreParenteses param_vazio FechaParenteses
+    (81) funcao -> . AbreParenteses param FechaParenteses
+
+    While           shift and go to state 5
+    Var             shift and go to state 7
+    TipoVarString   shift and go to state 10
+    TipoVarInt      shift and go to state 11
+    TipoVarReal     shift and go to state 12
+    TipoVarBool     shift and go to state 13
+    If              shift and go to state 14
+    Print           shift and go to state 15
+    AbreParenteses  shift and go to state 6
+
+    statements                     shift and go to state 137
+    statement                      shift and go to state 4
+    funcao                         shift and go to state 8
+    tipoVar                        shift and go to state 9
+
+state 135
+
+    (4) statement -> While AbreParenteses cond_param FechaParenteses AbreParenteses statements . FechaParenteses
+    (2) statements -> statements . statement
+    (4) statement -> . While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (9) statement -> . Var OpAtrib expr
+    (10) statement -> . Var OpAtrib Texto
+    (11) statement -> . Var OpAtrib Var
+    (12) statement -> . Var OpAtrib Inteiro
+    (13) statement -> . Var OpAtrib Real
+    (14) statement -> . Var OpAtrib funcao
+    (15) statement -> . Var OpAtrib entrada
+    (16) statement -> . tipoVar Var OpAtrib expr
+    (17) statement -> . TipoVarString Var OpAtrib Texto
+    (18) statement -> . tipoVar Var OpAtrib Var
+    (19) statement -> . TipoVarInt Var OpAtrib Inteiro
+    (20) statement -> . TipoVarReal Var OpAtrib Inteiro
+    (21) statement -> . TipoVarReal Var OpAtrib Real
+    (22) statement -> . tipoVar Var OpAtrib funcao
+    (23) statement -> . TipoVarString Var OpAtrib entrada
+    (24) statement -> . TipoVarInt Var OpAtrib entrada
+    (25) statement -> . TipoVarReal Var OpAtrib entrada
+    (26) statement -> . TipoVarBool Var OpAtrib entrada
+    (27) statement -> . TipoVarBool Var OpAtrib true_false
+    (28) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (29) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose
+    (30) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses
+    (31) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses
+    (32) statement -> . funcao
+    (33) statement -> . funcao AbreParenteses statements FechaParenteses
+    (58) statement -> . Print AbreParenteses expr FechaParenteses
+    (5) tipoVar -> . TipoVarInt
+    (6) tipoVar -> . TipoVarReal
+    (7) tipoVar -> . TipoVarString
+    (8) tipoVar -> . TipoVarBool
+    (80) funcao -> . AbreParenteses param_vazio FechaParenteses
+    (81) funcao -> . AbreParenteses param FechaParenteses
+
+    FechaParenteses shift and go to state 138
+    While           shift and go to state 5
+    Var             shift and go to state 7
+    TipoVarString   shift and go to state 10
+    TipoVarInt      shift and go to state 11
+    TipoVarReal     shift and go to state 12
+    TipoVarBool     shift and go to state 13
+    If              shift and go to state 14
+    Print           shift and go to state 15
+    AbreParenteses  shift and go to state 6
+
+    statement                      shift and go to state 17
+    funcao                         shift and go to state 8
+    tipoVar                        shift and go to state 9
+
+state 136
+
+    (78) entrada -> Input AbreParenteses Texto FechaParenteses .
+
+    Fim             reduce using rule 78 (entrada -> Input AbreParenteses Texto FechaParenteses .)
+    While           reduce using rule 78 (entrada -> Input AbreParenteses Texto FechaParenteses .)
+    Var             reduce using rule 78 (entrada -> Input AbreParenteses Texto FechaParenteses .)
+    TipoVarString   reduce using rule 78 (entrada -> Input AbreParenteses Texto FechaParenteses .)
+    TipoVarInt      reduce using rule 78 (entrada -> Input AbreParenteses Texto FechaParenteses .)
+    TipoVarReal     reduce using rule 78 (entrada -> Input AbreParenteses Texto FechaParenteses .)
+    TipoVarBool     reduce using rule 78 (entrada -> Input AbreParenteses Texto FechaParenteses .)
+    If              reduce using rule 78 (entrada -> Input AbreParenteses Texto FechaParenteses .)
+    Print           reduce using rule 78 (entrada -> Input AbreParenteses Texto FechaParenteses .)
+    AbreParenteses  reduce using rule 78 (entrada -> Input AbreParenteses Texto FechaParenteses .)
+    FechaParenteses reduce using rule 78 (entrada -> Input AbreParenteses Texto FechaParenteses .)
+
+
+state 137
+
+    (28) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements . FechaParenteses
+    (29) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements . FechaParenteses senaose
+    (30) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements . FechaParenteses senaose Else AbreParenteses statements FechaParenteses
+    (31) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements . FechaParenteses Else AbreParenteses statements FechaParenteses
+    (2) statements -> statements . statement
+    (4) statement -> . While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (9) statement -> . Var OpAtrib expr
+    (10) statement -> . Var OpAtrib Texto
+    (11) statement -> . Var OpAtrib Var
+    (12) statement -> . Var OpAtrib Inteiro
+    (13) statement -> . Var OpAtrib Real
+    (14) statement -> . Var OpAtrib funcao
+    (15) statement -> . Var OpAtrib entrada
+    (16) statement -> . tipoVar Var OpAtrib expr
+    (17) statement -> . TipoVarString Var OpAtrib Texto
+    (18) statement -> . tipoVar Var OpAtrib Var
+    (19) statement -> . TipoVarInt Var OpAtrib Inteiro
+    (20) statement -> . TipoVarReal Var OpAtrib Inteiro
+    (21) statement -> . TipoVarReal Var OpAtrib Real
+    (22) statement -> . tipoVar Var OpAtrib funcao
+    (23) statement -> . TipoVarString Var OpAtrib entrada
+    (24) statement -> . TipoVarInt Var OpAtrib entrada
+    (25) statement -> . TipoVarReal Var OpAtrib entrada
+    (26) statement -> . TipoVarBool Var OpAtrib entrada
+    (27) statement -> . TipoVarBool Var OpAtrib true_false
+    (28) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (29) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose
+    (30) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses
+    (31) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses
+    (32) statement -> . funcao
+    (33) statement -> . funcao AbreParenteses statements FechaParenteses
+    (58) statement -> . Print AbreParenteses expr FechaParenteses
+    (5) tipoVar -> . TipoVarInt
+    (6) tipoVar -> . TipoVarReal
+    (7) tipoVar -> . TipoVarString
+    (8) tipoVar -> . TipoVarBool
+    (80) funcao -> . AbreParenteses param_vazio FechaParenteses
+    (81) funcao -> . AbreParenteses param FechaParenteses
+
+    FechaParenteses shift and go to state 139
+    While           shift and go to state 5
+    Var             shift and go to state 7
+    TipoVarString   shift and go to state 10
+    TipoVarInt      shift and go to state 11
+    TipoVarReal     shift and go to state 12
+    TipoVarBool     shift and go to state 13
+    If              shift and go to state 14
+    Print           shift and go to state 15
+    AbreParenteses  shift and go to state 6
+
+    statement                      shift and go to state 17
+    funcao                         shift and go to state 8
+    tipoVar                        shift and go to state 9
+
+state 138
+
+    (4) statement -> While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .
+
+    Fim             reduce using rule 4 (statement -> While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    While           reduce using rule 4 (statement -> While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    Var             reduce using rule 4 (statement -> While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    TipoVarString   reduce using rule 4 (statement -> While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    TipoVarInt      reduce using rule 4 (statement -> While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    TipoVarReal     reduce using rule 4 (statement -> While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    TipoVarBool     reduce using rule 4 (statement -> While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    If              reduce using rule 4 (statement -> While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    Print           reduce using rule 4 (statement -> While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    AbreParenteses  reduce using rule 4 (statement -> While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    FechaParenteses reduce using rule 4 (statement -> While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+
+
+state 139
+
+    (28) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .
+    (29) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses . senaose
+    (30) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses . senaose Else AbreParenteses statements FechaParenteses
+    (31) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses . Else AbreParenteses statements FechaParenteses
+    (82) senaose -> . Elseif AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (83) senaose -> . senaose senaose
+    (84) senaose -> . senaose
+
+    Fim             reduce using rule 28 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    While           reduce using rule 28 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    Var             reduce using rule 28 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    TipoVarString   reduce using rule 28 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    TipoVarInt      reduce using rule 28 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    TipoVarReal     reduce using rule 28 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    TipoVarBool     reduce using rule 28 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    If              reduce using rule 28 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    Print           reduce using rule 28 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    AbreParenteses  reduce using rule 28 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    FechaParenteses reduce using rule 28 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    Else            shift and go to state 141
+    Elseif          shift and go to state 142
+
+    senaose                        shift and go to state 140
+
+state 140
+
+    (29) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .
+    (30) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose . Else AbreParenteses statements FechaParenteses
+    (83) senaose -> senaose . senaose
+    (84) senaose -> senaose .
+    (82) senaose -> . Elseif AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (83) senaose -> . senaose senaose
+    (84) senaose -> . senaose
+
+  ! shift/reduce conflict for Else resolved as shift
+  ! reduce/reduce conflict for Fim resolved using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+  ! reduce/reduce conflict for While resolved using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+  ! reduce/reduce conflict for Var resolved using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+  ! reduce/reduce conflict for TipoVarString resolved using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+  ! reduce/reduce conflict for TipoVarInt resolved using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+  ! reduce/reduce conflict for TipoVarReal resolved using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+  ! reduce/reduce conflict for TipoVarBool resolved using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+  ! reduce/reduce conflict for If resolved using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+  ! reduce/reduce conflict for Print resolved using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+  ! reduce/reduce conflict for AbreParenteses resolved using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+  ! reduce/reduce conflict for FechaParenteses resolved using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+  ! shift/reduce conflict for Elseif resolved as shift
+    Fim             reduce using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+    While           reduce using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+    Var             reduce using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+    TipoVarString   reduce using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+    TipoVarInt      reduce using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+    TipoVarReal     reduce using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+    TipoVarBool     reduce using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+    If              reduce using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+    Print           reduce using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+    AbreParenteses  reduce using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+    FechaParenteses reduce using rule 29 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose .)
+    Else            shift and go to state 144
+    Elseif          shift and go to state 142
+
+  ! Else            [ reduce using rule 84 (senaose -> senaose .) ]
+  ! Elseif          [ reduce using rule 84 (senaose -> senaose .) ]
+  ! Fim             [ reduce using rule 84 (senaose -> senaose .) ]
+  ! While           [ reduce using rule 84 (senaose -> senaose .) ]
+  ! Var             [ reduce using rule 84 (senaose -> senaose .) ]
+  ! TipoVarString   [ reduce using rule 84 (senaose -> senaose .) ]
+  ! TipoVarInt      [ reduce using rule 84 (senaose -> senaose .) ]
+  ! TipoVarReal     [ reduce using rule 84 (senaose -> senaose .) ]
+  ! TipoVarBool     [ reduce using rule 84 (senaose -> senaose .) ]
+  ! If              [ reduce using rule 84 (senaose -> senaose .) ]
+  ! Print           [ reduce using rule 84 (senaose -> senaose .) ]
+  ! AbreParenteses  [ reduce using rule 84 (senaose -> senaose .) ]
+  ! FechaParenteses [ reduce using rule 84 (senaose -> senaose .) ]
+
+    senaose                        shift and go to state 143
+
+state 141
+
+    (31) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else . AbreParenteses statements FechaParenteses
+
+    AbreParenteses  shift and go to state 145
+
+
+state 142
+
+    (82) senaose -> Elseif . AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+
+    AbreParenteses  shift and go to state 146
+
+
+state 143
+
+    (83) senaose -> senaose senaose .
+    (83) senaose -> senaose . senaose
+    (84) senaose -> senaose .
+    (82) senaose -> . Elseif AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (83) senaose -> . senaose senaose
+    (84) senaose -> . senaose
+
+  ! reduce/reduce conflict for Elseif resolved using rule 83 (senaose -> senaose senaose .)
+  ! reduce/reduce conflict for Else resolved using rule 83 (senaose -> senaose senaose .)
+  ! reduce/reduce conflict for Fim resolved using rule 83 (senaose -> senaose senaose .)
+  ! reduce/reduce conflict for While resolved using rule 83 (senaose -> senaose senaose .)
+  ! reduce/reduce conflict for Var resolved using rule 83 (senaose -> senaose senaose .)
+  ! reduce/reduce conflict for TipoVarString resolved using rule 83 (senaose -> senaose senaose .)
+  ! reduce/reduce conflict for TipoVarInt resolved using rule 83 (senaose -> senaose senaose .)
+  ! reduce/reduce conflict for TipoVarReal resolved using rule 83 (senaose -> senaose senaose .)
+  ! reduce/reduce conflict for TipoVarBool resolved using rule 83 (senaose -> senaose senaose .)
+  ! reduce/reduce conflict for If resolved using rule 83 (senaose -> senaose senaose .)
+  ! reduce/reduce conflict for Print resolved using rule 83 (senaose -> senaose senaose .)
+  ! reduce/reduce conflict for AbreParenteses resolved using rule 83 (senaose -> senaose senaose .)
+  ! reduce/reduce conflict for FechaParenteses resolved using rule 83 (senaose -> senaose senaose .)
+  ! shift/reduce conflict for Elseif resolved as shift
+    Else            reduce using rule 83 (senaose -> senaose senaose .)
+    Fim             reduce using rule 83 (senaose -> senaose senaose .)
+    While           reduce using rule 83 (senaose -> senaose senaose .)
+    Var             reduce using rule 83 (senaose -> senaose senaose .)
+    TipoVarString   reduce using rule 83 (senaose -> senaose senaose .)
+    TipoVarInt      reduce using rule 83 (senaose -> senaose senaose .)
+    TipoVarReal     reduce using rule 83 (senaose -> senaose senaose .)
+    TipoVarBool     reduce using rule 83 (senaose -> senaose senaose .)
+    If              reduce using rule 83 (senaose -> senaose senaose .)
+    Print           reduce using rule 83 (senaose -> senaose senaose .)
+    AbreParenteses  reduce using rule 83 (senaose -> senaose senaose .)
+    FechaParenteses reduce using rule 83 (senaose -> senaose senaose .)
+    Elseif          shift and go to state 142
+
+  ! Elseif          [ reduce using rule 83 (senaose -> senaose senaose .) ]
+  ! Elseif          [ reduce using rule 84 (senaose -> senaose .) ]
+  ! Else            [ reduce using rule 84 (senaose -> senaose .) ]
+  ! Fim             [ reduce using rule 84 (senaose -> senaose .) ]
+  ! While           [ reduce using rule 84 (senaose -> senaose .) ]
+  ! Var             [ reduce using rule 84 (senaose -> senaose .) ]
+  ! TipoVarString   [ reduce using rule 84 (senaose -> senaose .) ]
+  ! TipoVarInt      [ reduce using rule 84 (senaose -> senaose .) ]
+  ! TipoVarReal     [ reduce using rule 84 (senaose -> senaose .) ]
+  ! TipoVarBool     [ reduce using rule 84 (senaose -> senaose .) ]
+  ! If              [ reduce using rule 84 (senaose -> senaose .) ]
+  ! Print           [ reduce using rule 84 (senaose -> senaose .) ]
+  ! AbreParenteses  [ reduce using rule 84 (senaose -> senaose .) ]
+  ! FechaParenteses [ reduce using rule 84 (senaose -> senaose .) ]
+
+    senaose                        shift and go to state 143
+
+state 144
+
+    (30) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else . AbreParenteses statements FechaParenteses
+
+    AbreParenteses  shift and go to state 147
+
+
+state 145
+
+    (31) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses . statements FechaParenteses
+    (2) statements -> . statements statement
+    (3) statements -> . statement
+    (4) statement -> . While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (9) statement -> . Var OpAtrib expr
+    (10) statement -> . Var OpAtrib Texto
+    (11) statement -> . Var OpAtrib Var
+    (12) statement -> . Var OpAtrib Inteiro
+    (13) statement -> . Var OpAtrib Real
+    (14) statement -> . Var OpAtrib funcao
+    (15) statement -> . Var OpAtrib entrada
+    (16) statement -> . tipoVar Var OpAtrib expr
+    (17) statement -> . TipoVarString Var OpAtrib Texto
+    (18) statement -> . tipoVar Var OpAtrib Var
+    (19) statement -> . TipoVarInt Var OpAtrib Inteiro
+    (20) statement -> . TipoVarReal Var OpAtrib Inteiro
+    (21) statement -> . TipoVarReal Var OpAtrib Real
+    (22) statement -> . tipoVar Var OpAtrib funcao
+    (23) statement -> . TipoVarString Var OpAtrib entrada
+    (24) statement -> . TipoVarInt Var OpAtrib entrada
+    (25) statement -> . TipoVarReal Var OpAtrib entrada
+    (26) statement -> . TipoVarBool Var OpAtrib entrada
+    (27) statement -> . TipoVarBool Var OpAtrib true_false
+    (28) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (29) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose
+    (30) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses
+    (31) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses
+    (32) statement -> . funcao
+    (33) statement -> . funcao AbreParenteses statements FechaParenteses
+    (58) statement -> . Print AbreParenteses expr FechaParenteses
+    (5) tipoVar -> . TipoVarInt
+    (6) tipoVar -> . TipoVarReal
+    (7) tipoVar -> . TipoVarString
+    (8) tipoVar -> . TipoVarBool
+    (80) funcao -> . AbreParenteses param_vazio FechaParenteses
+    (81) funcao -> . AbreParenteses param FechaParenteses
+
+    While           shift and go to state 5
+    Var             shift and go to state 7
+    TipoVarString   shift and go to state 10
+    TipoVarInt      shift and go to state 11
+    TipoVarReal     shift and go to state 12
+    TipoVarBool     shift and go to state 13
+    If              shift and go to state 14
+    Print           shift and go to state 15
+    AbreParenteses  shift and go to state 6
+
+    statements                     shift and go to state 148
+    statement                      shift and go to state 4
+    funcao                         shift and go to state 8
+    tipoVar                        shift and go to state 9
+
+state 146
+
+    (82) senaose -> Elseif AbreParenteses . cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (34) cond_param -> . Var OpRelaMenor Inteiro
+    (35) cond_param -> . Var OpRelaMenor Real
+    (36) cond_param -> . Var OpRelaMenor Var
+    (37) cond_param -> . Var OpRelaMaior Inteiro
+    (38) cond_param -> . Var OpRelaMaior Real
+    (39) cond_param -> . Var OpRelaMaior Var
+    (40) cond_param -> . Var OpRelaMenorIgual Inteiro
+    (41) cond_param -> . Var OpRelaMenorIgual Real
+    (42) cond_param -> . Var OpRelaMenorIgual Var
+    (43) cond_param -> . Var OpRelaMaiorIgual Inteiro
+    (44) cond_param -> . Var OpRelaMaiorIgual Real
+    (45) cond_param -> . Var OpRelaMaiorIgual Var
+    (46) cond_param -> . Var OpRelaIgual Inteiro
+    (47) cond_param -> . Var OpRelaIgual Real
+    (48) cond_param -> . Var OpRelaIgual Var
+    (49) cond_param -> . Var OpRelaDiferente Inteiro
+    (50) cond_param -> . Var OpRelaDiferente Real
+    (51) cond_param -> . Var OpRelaDiferente Var
+    (52) cond_param -> . Var OpLogAnd Inteiro
+    (53) cond_param -> . Var OpLogAnd Real
+    (54) cond_param -> . Var OpLogAnd Var
+    (55) cond_param -> . Var OpLogOr Inteiro
+    (56) cond_param -> . Var OpLogOr Real
+    (57) cond_param -> . Var OpLogOr Var
+    (61) cond_param -> . cond_param OpLogAnd cond_param
+    (62) cond_param -> . cond_param OpLogOr cond_param
+
+    Var             shift and go to state 35
+
+    cond_param                     shift and go to state 149
+
+state 147
+
+    (30) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses . statements FechaParenteses
+    (2) statements -> . statements statement
+    (3) statements -> . statement
+    (4) statement -> . While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (9) statement -> . Var OpAtrib expr
+    (10) statement -> . Var OpAtrib Texto
+    (11) statement -> . Var OpAtrib Var
+    (12) statement -> . Var OpAtrib Inteiro
+    (13) statement -> . Var OpAtrib Real
+    (14) statement -> . Var OpAtrib funcao
+    (15) statement -> . Var OpAtrib entrada
+    (16) statement -> . tipoVar Var OpAtrib expr
+    (17) statement -> . TipoVarString Var OpAtrib Texto
+    (18) statement -> . tipoVar Var OpAtrib Var
+    (19) statement -> . TipoVarInt Var OpAtrib Inteiro
+    (20) statement -> . TipoVarReal Var OpAtrib Inteiro
+    (21) statement -> . TipoVarReal Var OpAtrib Real
+    (22) statement -> . tipoVar Var OpAtrib funcao
+    (23) statement -> . TipoVarString Var OpAtrib entrada
+    (24) statement -> . TipoVarInt Var OpAtrib entrada
+    (25) statement -> . TipoVarReal Var OpAtrib entrada
+    (26) statement -> . TipoVarBool Var OpAtrib entrada
+    (27) statement -> . TipoVarBool Var OpAtrib true_false
+    (28) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (29) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose
+    (30) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses
+    (31) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses
+    (32) statement -> . funcao
+    (33) statement -> . funcao AbreParenteses statements FechaParenteses
+    (58) statement -> . Print AbreParenteses expr FechaParenteses
+    (5) tipoVar -> . TipoVarInt
+    (6) tipoVar -> . TipoVarReal
+    (7) tipoVar -> . TipoVarString
+    (8) tipoVar -> . TipoVarBool
+    (80) funcao -> . AbreParenteses param_vazio FechaParenteses
+    (81) funcao -> . AbreParenteses param FechaParenteses
+
+    While           shift and go to state 5
+    Var             shift and go to state 7
+    TipoVarString   shift and go to state 10
+    TipoVarInt      shift and go to state 11
+    TipoVarReal     shift and go to state 12
+    TipoVarBool     shift and go to state 13
+    If              shift and go to state 14
+    Print           shift and go to state 15
+    AbreParenteses  shift and go to state 6
+
+    statements                     shift and go to state 150
+    statement                      shift and go to state 4
+    funcao                         shift and go to state 8
+    tipoVar                        shift and go to state 9
+
+state 148
+
+    (31) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements . FechaParenteses
+    (2) statements -> statements . statement
+    (4) statement -> . While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (9) statement -> . Var OpAtrib expr
+    (10) statement -> . Var OpAtrib Texto
+    (11) statement -> . Var OpAtrib Var
+    (12) statement -> . Var OpAtrib Inteiro
+    (13) statement -> . Var OpAtrib Real
+    (14) statement -> . Var OpAtrib funcao
+    (15) statement -> . Var OpAtrib entrada
+    (16) statement -> . tipoVar Var OpAtrib expr
+    (17) statement -> . TipoVarString Var OpAtrib Texto
+    (18) statement -> . tipoVar Var OpAtrib Var
+    (19) statement -> . TipoVarInt Var OpAtrib Inteiro
+    (20) statement -> . TipoVarReal Var OpAtrib Inteiro
+    (21) statement -> . TipoVarReal Var OpAtrib Real
+    (22) statement -> . tipoVar Var OpAtrib funcao
+    (23) statement -> . TipoVarString Var OpAtrib entrada
+    (24) statement -> . TipoVarInt Var OpAtrib entrada
+    (25) statement -> . TipoVarReal Var OpAtrib entrada
+    (26) statement -> . TipoVarBool Var OpAtrib entrada
+    (27) statement -> . TipoVarBool Var OpAtrib true_false
+    (28) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (29) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose
+    (30) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses
+    (31) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses
+    (32) statement -> . funcao
+    (33) statement -> . funcao AbreParenteses statements FechaParenteses
+    (58) statement -> . Print AbreParenteses expr FechaParenteses
+    (5) tipoVar -> . TipoVarInt
+    (6) tipoVar -> . TipoVarReal
+    (7) tipoVar -> . TipoVarString
+    (8) tipoVar -> . TipoVarBool
+    (80) funcao -> . AbreParenteses param_vazio FechaParenteses
+    (81) funcao -> . AbreParenteses param FechaParenteses
+
+    FechaParenteses shift and go to state 151
+    While           shift and go to state 5
+    Var             shift and go to state 7
+    TipoVarString   shift and go to state 10
+    TipoVarInt      shift and go to state 11
+    TipoVarReal     shift and go to state 12
+    TipoVarBool     shift and go to state 13
+    If              shift and go to state 14
+    Print           shift and go to state 15
+    AbreParenteses  shift and go to state 6
+
+    statement                      shift and go to state 17
+    funcao                         shift and go to state 8
+    tipoVar                        shift and go to state 9
+
+state 149
+
+    (82) senaose -> Elseif AbreParenteses cond_param . FechaParenteses AbreParenteses statements FechaParenteses
+    (61) cond_param -> cond_param . OpLogAnd cond_param
+    (62) cond_param -> cond_param . OpLogOr cond_param
+
+    FechaParenteses shift and go to state 152
+    OpLogAnd        shift and go to state 62
+    OpLogOr         shift and go to state 63
+
+
+state 150
+
+    (30) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements . FechaParenteses
+    (2) statements -> statements . statement
+    (4) statement -> . While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (9) statement -> . Var OpAtrib expr
+    (10) statement -> . Var OpAtrib Texto
+    (11) statement -> . Var OpAtrib Var
+    (12) statement -> . Var OpAtrib Inteiro
+    (13) statement -> . Var OpAtrib Real
+    (14) statement -> . Var OpAtrib funcao
+    (15) statement -> . Var OpAtrib entrada
+    (16) statement -> . tipoVar Var OpAtrib expr
+    (17) statement -> . TipoVarString Var OpAtrib Texto
+    (18) statement -> . tipoVar Var OpAtrib Var
+    (19) statement -> . TipoVarInt Var OpAtrib Inteiro
+    (20) statement -> . TipoVarReal Var OpAtrib Inteiro
+    (21) statement -> . TipoVarReal Var OpAtrib Real
+    (22) statement -> . tipoVar Var OpAtrib funcao
+    (23) statement -> . TipoVarString Var OpAtrib entrada
+    (24) statement -> . TipoVarInt Var OpAtrib entrada
+    (25) statement -> . TipoVarReal Var OpAtrib entrada
+    (26) statement -> . TipoVarBool Var OpAtrib entrada
+    (27) statement -> . TipoVarBool Var OpAtrib true_false
+    (28) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (29) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose
+    (30) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses
+    (31) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses
+    (32) statement -> . funcao
+    (33) statement -> . funcao AbreParenteses statements FechaParenteses
+    (58) statement -> . Print AbreParenteses expr FechaParenteses
+    (5) tipoVar -> . TipoVarInt
+    (6) tipoVar -> . TipoVarReal
+    (7) tipoVar -> . TipoVarString
+    (8) tipoVar -> . TipoVarBool
+    (80) funcao -> . AbreParenteses param_vazio FechaParenteses
+    (81) funcao -> . AbreParenteses param FechaParenteses
+
+    FechaParenteses shift and go to state 153
+    While           shift and go to state 5
+    Var             shift and go to state 7
+    TipoVarString   shift and go to state 10
+    TipoVarInt      shift and go to state 11
+    TipoVarReal     shift and go to state 12
+    TipoVarBool     shift and go to state 13
+    If              shift and go to state 14
+    Print           shift and go to state 15
+    AbreParenteses  shift and go to state 6
+
+    statement                      shift and go to state 17
+    funcao                         shift and go to state 8
+    tipoVar                        shift and go to state 9
+
+state 151
+
+    (31) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses .
+
+    Fim             reduce using rule 31 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses .)
+    While           reduce using rule 31 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses .)
+    Var             reduce using rule 31 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses .)
+    TipoVarString   reduce using rule 31 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses .)
+    TipoVarInt      reduce using rule 31 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses .)
+    TipoVarReal     reduce using rule 31 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses .)
+    TipoVarBool     reduce using rule 31 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses .)
+    If              reduce using rule 31 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses .)
+    Print           reduce using rule 31 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses .)
+    AbreParenteses  reduce using rule 31 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses .)
+    FechaParenteses reduce using rule 31 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses .)
+
+
+state 152
+
+    (82) senaose -> Elseif AbreParenteses cond_param FechaParenteses . AbreParenteses statements FechaParenteses
+
+    AbreParenteses  shift and go to state 154
+
+
+state 153
+
+    (30) statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses .
+
+    Fim             reduce using rule 30 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses .)
+    While           reduce using rule 30 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses .)
+    Var             reduce using rule 30 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses .)
+    TipoVarString   reduce using rule 30 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses .)
+    TipoVarInt      reduce using rule 30 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses .)
+    TipoVarReal     reduce using rule 30 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses .)
+    TipoVarBool     reduce using rule 30 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses .)
+    If              reduce using rule 30 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses .)
+    Print           reduce using rule 30 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses .)
+    AbreParenteses  reduce using rule 30 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses .)
+    FechaParenteses reduce using rule 30 (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses .)
+
+
+state 154
+
+    (82) senaose -> Elseif AbreParenteses cond_param FechaParenteses AbreParenteses . statements FechaParenteses
+    (2) statements -> . statements statement
+    (3) statements -> . statement
+    (4) statement -> . While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (9) statement -> . Var OpAtrib expr
+    (10) statement -> . Var OpAtrib Texto
+    (11) statement -> . Var OpAtrib Var
+    (12) statement -> . Var OpAtrib Inteiro
+    (13) statement -> . Var OpAtrib Real
+    (14) statement -> . Var OpAtrib funcao
+    (15) statement -> . Var OpAtrib entrada
+    (16) statement -> . tipoVar Var OpAtrib expr
+    (17) statement -> . TipoVarString Var OpAtrib Texto
+    (18) statement -> . tipoVar Var OpAtrib Var
+    (19) statement -> . TipoVarInt Var OpAtrib Inteiro
+    (20) statement -> . TipoVarReal Var OpAtrib Inteiro
+    (21) statement -> . TipoVarReal Var OpAtrib Real
+    (22) statement -> . tipoVar Var OpAtrib funcao
+    (23) statement -> . TipoVarString Var OpAtrib entrada
+    (24) statement -> . TipoVarInt Var OpAtrib entrada
+    (25) statement -> . TipoVarReal Var OpAtrib entrada
+    (26) statement -> . TipoVarBool Var OpAtrib entrada
+    (27) statement -> . TipoVarBool Var OpAtrib true_false
+    (28) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (29) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose
+    (30) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses
+    (31) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses
+    (32) statement -> . funcao
+    (33) statement -> . funcao AbreParenteses statements FechaParenteses
+    (58) statement -> . Print AbreParenteses expr FechaParenteses
+    (5) tipoVar -> . TipoVarInt
+    (6) tipoVar -> . TipoVarReal
+    (7) tipoVar -> . TipoVarString
+    (8) tipoVar -> . TipoVarBool
+    (80) funcao -> . AbreParenteses param_vazio FechaParenteses
+    (81) funcao -> . AbreParenteses param FechaParenteses
+
+    While           shift and go to state 5
+    Var             shift and go to state 7
+    TipoVarString   shift and go to state 10
+    TipoVarInt      shift and go to state 11
+    TipoVarReal     shift and go to state 12
+    TipoVarBool     shift and go to state 13
+    If              shift and go to state 14
+    Print           shift and go to state 15
+    AbreParenteses  shift and go to state 6
+
+    statements                     shift and go to state 155
+    statement                      shift and go to state 4
+    funcao                         shift and go to state 8
+    tipoVar                        shift and go to state 9
+
+state 155
+
+    (82) senaose -> Elseif AbreParenteses cond_param FechaParenteses AbreParenteses statements . FechaParenteses
+    (2) statements -> statements . statement
+    (4) statement -> . While AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (9) statement -> . Var OpAtrib expr
+    (10) statement -> . Var OpAtrib Texto
+    (11) statement -> . Var OpAtrib Var
+    (12) statement -> . Var OpAtrib Inteiro
+    (13) statement -> . Var OpAtrib Real
+    (14) statement -> . Var OpAtrib funcao
+    (15) statement -> . Var OpAtrib entrada
+    (16) statement -> . tipoVar Var OpAtrib expr
+    (17) statement -> . TipoVarString Var OpAtrib Texto
+    (18) statement -> . tipoVar Var OpAtrib Var
+    (19) statement -> . TipoVarInt Var OpAtrib Inteiro
+    (20) statement -> . TipoVarReal Var OpAtrib Inteiro
+    (21) statement -> . TipoVarReal Var OpAtrib Real
+    (22) statement -> . tipoVar Var OpAtrib funcao
+    (23) statement -> . TipoVarString Var OpAtrib entrada
+    (24) statement -> . TipoVarInt Var OpAtrib entrada
+    (25) statement -> . TipoVarReal Var OpAtrib entrada
+    (26) statement -> . TipoVarBool Var OpAtrib entrada
+    (27) statement -> . TipoVarBool Var OpAtrib true_false
+    (28) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses
+    (29) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose
+    (30) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose Else AbreParenteses statements FechaParenteses
+    (31) statement -> . If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses Else AbreParenteses statements FechaParenteses
+    (32) statement -> . funcao
+    (33) statement -> . funcao AbreParenteses statements FechaParenteses
+    (58) statement -> . Print AbreParenteses expr FechaParenteses
+    (5) tipoVar -> . TipoVarInt
+    (6) tipoVar -> . TipoVarReal
+    (7) tipoVar -> . TipoVarString
+    (8) tipoVar -> . TipoVarBool
+    (80) funcao -> . AbreParenteses param_vazio FechaParenteses
+    (81) funcao -> . AbreParenteses param FechaParenteses
+
+    FechaParenteses shift and go to state 156
+    While           shift and go to state 5
+    Var             shift and go to state 7
+    TipoVarString   shift and go to state 10
+    TipoVarInt      shift and go to state 11
+    TipoVarReal     shift and go to state 12
+    TipoVarBool     shift and go to state 13
+    If              shift and go to state 14
+    Print           shift and go to state 15
+    AbreParenteses  shift and go to state 6
+
+    statement                      shift and go to state 17
+    funcao                         shift and go to state 8
+    tipoVar                        shift and go to state 9
+
+state 156
+
+    (82) senaose -> Elseif AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .
+
+    Else            reduce using rule 82 (senaose -> Elseif AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    Elseif          reduce using rule 82 (senaose -> Elseif AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    Fim             reduce using rule 82 (senaose -> Elseif AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    While           reduce using rule 82 (senaose -> Elseif AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    Var             reduce using rule 82 (senaose -> Elseif AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    TipoVarString   reduce using rule 82 (senaose -> Elseif AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    TipoVarInt      reduce using rule 82 (senaose -> Elseif AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    TipoVarReal     reduce using rule 82 (senaose -> Elseif AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    TipoVarBool     reduce using rule 82 (senaose -> Elseif AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    If              reduce using rule 82 (senaose -> Elseif AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    Print           reduce using rule 82 (senaose -> Elseif AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    AbreParenteses  reduce using rule 82 (senaose -> Elseif AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+    FechaParenteses reduce using rule 82 (senaose -> Elseif AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for AbreParenteses in state 8 resolved as shift
+WARNING: shift/reduce conflict for Var in state 10 resolved as shift
+WARNING: shift/reduce conflict for Var in state 11 resolved as shift
+WARNING: shift/reduce conflict for Var in state 12 resolved as shift
+WARNING: shift/reduce conflict for Var in state 13 resolved as shift
+WARNING: shift/reduce conflict for Virgula in state 72 resolved as shift
+WARNING: shift/reduce conflict for OpLogAnd in state 101 resolved as shift
+WARNING: shift/reduce conflict for OpLogOr in state 101 resolved as shift
+WARNING: shift/reduce conflict for OpLogAnd in state 102 resolved as shift
+WARNING: shift/reduce conflict for OpLogOr in state 102 resolved as shift
+WARNING: shift/reduce conflict for OpMatSoma in state 127 resolved as shift
+WARNING: shift/reduce conflict for OpMatSub in state 127 resolved as shift
+WARNING: shift/reduce conflict for OpMatMult in state 127 resolved as shift
+WARNING: shift/reduce conflict for OpMatDiv in state 127 resolved as shift
+WARNING: shift/reduce conflict for OpMatSoma in state 128 resolved as shift
+WARNING: shift/reduce conflict for OpMatSub in state 128 resolved as shift
+WARNING: shift/reduce conflict for OpMatMult in state 128 resolved as shift
+WARNING: shift/reduce conflict for OpMatDiv in state 128 resolved as shift
+WARNING: shift/reduce conflict for OpMatSoma in state 129 resolved as shift
+WARNING: shift/reduce conflict for OpMatSub in state 129 resolved as shift
+WARNING: shift/reduce conflict for OpMatMult in state 129 resolved as shift
+WARNING: shift/reduce conflict for OpMatDiv in state 129 resolved as shift
+WARNING: shift/reduce conflict for OpMatSoma in state 130 resolved as shift
+WARNING: shift/reduce conflict for OpMatSub in state 130 resolved as shift
+WARNING: shift/reduce conflict for OpMatMult in state 130 resolved as shift
+WARNING: shift/reduce conflict for OpMatDiv in state 130 resolved as shift
+WARNING: shift/reduce conflict for Else in state 140 resolved as shift
+WARNING: shift/reduce conflict for Elseif in state 140 resolved as shift
+WARNING: shift/reduce conflict for Elseif in state 143 resolved as shift
+WARNING: reduce/reduce conflict in state 39 resolved using rule (statement -> Var OpAtrib Var)
+WARNING: rejected rule (expr -> Var) in state 39
+WARNING: reduce/reduce conflict in state 41 resolved using rule (statement -> Var OpAtrib Texto)
+WARNING: rejected rule (expr -> Texto) in state 41
+WARNING: reduce/reduce conflict in state 42 resolved using rule (statement -> Var OpAtrib Inteiro)
+WARNING: rejected rule (expr -> Inteiro) in state 42
+WARNING: reduce/reduce conflict in state 43 resolved using rule (statement -> Var OpAtrib Real)
+WARNING: rejected rule (expr -> Real) in state 43
+WARNING: reduce/reduce conflict in state 78 resolved using rule (expr -> Inteiro)
+WARNING: rejected rule (param -> Inteiro) in state 78
+WARNING: reduce/reduce conflict in state 79 resolved using rule (expr -> Real)
+WARNING: rejected rule (param -> Real) in state 79
+WARNING: reduce/reduce conflict in state 80 resolved using rule (expr -> Var)
+WARNING: rejected rule (param -> Var) in state 80
+WARNING: reduce/reduce conflict in state 81 resolved using rule (expr -> Texto)
+WARNING: rejected rule (param -> Texto) in state 81
+WARNING: reduce/reduce conflict in state 84 resolved using rule (statement -> tipoVar Var OpAtrib Var)
+WARNING: rejected rule (expr -> Var) in state 84
+WARNING: reduce/reduce conflict in state 140 resolved using rule (statement -> If AbreParenteses cond_param FechaParenteses AbreParenteses statements FechaParenteses senaose)
+WARNING: rejected rule (senaose -> senaose) in state 140
+WARNING: reduce/reduce conflict in state 143 resolved using rule (senaose -> senaose senaose)
+WARNING: rejected rule (senaose -> senaose) in state 143
+WARNING: Rule (senaose -> senaose) is never reduced

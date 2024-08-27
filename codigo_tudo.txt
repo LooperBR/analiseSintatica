@@ -1,0 +1,30 @@
+🏫IFSULDEMINAS
+int  batata1 🟰 1
+real batata2 🟰 1.1
+string batata3 🟰 "teste"
+bool batata4 🟰 ✅
+bool batata5 🟰 ❗
+int idade 🟰 ❔➡️"Insira sua idade"⬅️
+🐘
+🐁
+🐘🟰
+🐁🟰
+🟰🟰
+❗🟰
+✖️
+➖
+➗
+➕
+✌️
+🤞
+🔚🔛
+🔄
+🌍 asd
+❌
+🔛➡️idade🐘🟰18⬅️➡️
+🎤➡️"Maior de idade"⬅️
+⬅️🔚➡️
+🎤➡️"Menor de idade"⬅️
+⬅️
+🏫 
+

@@ -1,0 +1,9 @@
+🏫IFSULDEMINAS
+int idade 🟰 ❔➡️"Insira sua idade"⬅️
+
+🔛➡️idade🐘🟰18⬅️➡️
+	🎤➡️"Maior de idade"⬅️
+⬅️🔚➡️
+	🎤➡️"Menor de idade"⬅️
+⬅️
+🏫
